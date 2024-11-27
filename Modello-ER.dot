@@ -62,8 +62,16 @@ graph ER {
     anomalia_causa[label="causa"];
     anomalia_livello[label="livello"];
     anomalia_data -- anomalia -- anomalia_ora;
-    anomalia_causa -- anomalia -- anomalia_livello
+    anomalia_causa -- anomalia -- anomalia_livello;
     /// Intervento
+    intevento[shape="box", style=filled, color="lightblue"];
+    intevento_codice[label="codice"];
+    intevento_descrizione[shape="box", label="descrizione"];
+    intevento_descrizione_riparazione[label="riparazione"];
+    intevento_descrizione_calibrazione[label="calibrazione"];
+    intevento_descrizione_sostituzione[label="sostituzione"];
+    intevento_dataprefissata[label="dataprefissata"];
+    intevento_esitointervento[label="esitointervento"];
     /// Report
     // Relazioni
     // Varie ed Eventuali
