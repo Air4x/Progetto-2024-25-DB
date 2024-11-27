@@ -72,7 +72,14 @@ graph ER {
     intevento_descrizione_sostituzione[label="sostituzione"];
     intevento_dataprefissata[label="dataprefissata"];
     intevento_esitointervento[label="esitointervento"];
+    intervento -- intervento_codice;
+    intervento -- intervento_descrizione;
+    intervento_descrizione_riparazione -- intervento_descrizione -- intervento_descrizione_calibrazione;
+    intervento_descrizione_sostituzione -- intervento_descrizione;
+    intervento -- intervento_esitointervento;
+    intervento -- intervento_dataprefissata;
     /// Report
     // Relazioni
     // Varie ed Eventuali
 }
+
