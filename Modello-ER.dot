@@ -4,6 +4,10 @@ graph ER {
     // Entità
     /// Missione
     missione[shape="box", style=filled, color="lightblue"];
+    missione_codice[label="codice"];
+    missione_obbiettivo[label="obbiettivo"];
+    missione -- missione_codice;
+    missione -- missione_obbiettivo;
     // Relazioni
     // Varie ed Eventuali
 }
