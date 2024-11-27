@@ -1,0 +1,9 @@
+graph ER {
+    layout=neato;
+    overlap=false;
+    // Entità
+    /// Missione
+    missione[shape="box", style=filled, color="lightblue"];
+    // Relazioni
+    // Varie ed Eventuali
+}
