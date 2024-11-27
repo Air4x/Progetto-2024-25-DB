@@ -79,7 +79,9 @@ graph ER {
     intervento -- intervento_esitointervento;
     intervento -- intervento_dataprefissata;
     /// Report
+    report[shape="box", style=filled, color="lightblue"];
+    report_statomissione[label="stato"];
+    report -- report_statomissione;
     // Relazioni
     // Varie ed Eventuali
 }
-
