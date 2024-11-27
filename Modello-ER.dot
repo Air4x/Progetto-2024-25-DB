@@ -7,9 +7,64 @@ graph ER {
     missione_codice[label="codice"];
     missione_obbiettivo[label="obbiettivo"];
     missione_statoattuale[label="statoAttuale"];
+    missione_dataFine[label="dataFine"];
+    missione_dataInizio[label="dataInizio"];
     missione -- missione_codice;
     missione -- missione_obbiettivo;
     missione -- missione_statoattuale;
+    missione -- missione_dataFine;
+    missione -- missione_dataInizio;
+    /// Membri dell'Equipaggio
+    membro[shape="box", style=filled, color="lightblue"];
+    membro_codice[label="codice"];
+    membro_nome[label="nome"];
+    membro_cognome[label="cognome"];
+    membro_ruolo[label="ruolo"];
+    membro -- membro_codice;
+    membro -- membro_nome;
+    membro -- membro_cognome;
+    membro -- membro_ruolo;
+    /// Sensori
+    sensore[shape="box", style=filled, color="lightblue"];
+    sensore_ID[label="ID"];
+    sensore_posizione[shape="box", label="posizione"];
+    sensore_pos_latitudine[label="latitudine"];
+    sensore_pos_longitudine[label="longitudine"];
+    sensore_pos_altitudine[label="altitudine"];
+    sensore_tipo[label="tipo"];
+    sensore_dataInstallazione[label="dataInstallazione"];
+    sensore_ultimoControllo[label="ultimoControllo"];
+    sensore_stato[label="stato"];
+    sensore -- sensore_ID;
+    sensore -- sensore_posizione;
+    sensore_posizione -- sensore_pos_latitudine;
+    sensore_pos_longitudine -- sensore_posizione -- sensore_pos_altitudine;
+    sensore -- sensore_tipo;
+    sensore -- sensore_dataInstallazione;
+    sensore -- sensore_ultimoControllo;
+    sensore -- sensore_stato;
+    /// Robot
+    robot[shape="box", style=filled, color="lightblue"];
+    robot_codice[label="codice"];
+    robot_tipo[label="tipologia"];
+    robot_codice -- robot -- robot_tipo;
+    /// Rilevazione
+    rilevazione[shape="box", style=filled, color="lightblue"];
+    rilevazione_data[label="data"];
+    rilevazione_ora[label="ora"];
+    rilevazione_valore[label="valore"];
+    rilevazione_data -- rilevazione -- rilevazione_ora;
+    rilevazione -- rilevazione_valore;
+    /// Anomalia
+    anomalia[shape="box", style=filled, color="lightblue"];
+    anomalia_data[label="data"];
+    anomalia_ora[label="ora"];
+    anomalia_causa[label="causa"];
+    anomalia_livello[label="livello"];
+    anomalia_data -- anomalia -- anomalia_ora;
+    anomalia_causa -- anomalia -- anomalia_livello
+    /// Intervento
+    /// Report
     // Relazioni
     // Varie ed Eventuali
 }
