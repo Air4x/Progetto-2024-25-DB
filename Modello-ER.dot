@@ -83,5 +83,8 @@ graph ER {
     report_statomissione[label="stato"];
     report -- report_statomissione;
     // Relazioni
+    /// scritto da
+    scritto_da[shape="diamond", style=filled, color="lightgray"];
+    report -- scritto_da -- membro;
     // Varie ed Eventuali
 }
