@@ -64,14 +64,14 @@ graph ER {
     anomalia_data -- anomalia -- anomalia_ora;
     anomalia_causa -- anomalia -- anomalia_livello;
     /// Intervento
-    intevento[shape="box", style=filled, color="lightblue"];
-    intevento_codice[label="codice"];
-    intevento_descrizione[shape="box", label="descrizione"];
-    intevento_descrizione_riparazione[label="riparazione"];
-    intevento_descrizione_calibrazione[label="calibrazione"];
-    intevento_descrizione_sostituzione[label="sostituzione"];
-    intevento_dataprefissata[label="dataprefissata"];
-    intevento_esitointervento[label="esitointervento"];
+    intervento[shape="box", style=filled, color="lightblue"];
+    intervento_codice[label="codice"];
+    intervento_descrizione[shape="box", label="descrizione"];
+    intervento_descrizione_riparazione[label="riparazione"];
+    intervento_descrizione_calibrazione[label="calibrazione"];
+    intervento_descrizione_sostituzione[label="sostituzione"];
+    intervento_dataprefissata[label="dataprefissata"];
+    intervento_esitointervento[label="esitointervento"];
     intervento -- intervento_codice;
     intervento -- intervento_descrizione;
     intervento_descrizione_riparazione -- intervento_descrizione -- intervento_descrizione_calibrazione;
