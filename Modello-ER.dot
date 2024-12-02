@@ -85,30 +85,39 @@ graph ER {
     // Relazioni
     /// Resoconto [missione (1,N) - report (1,1)]
     Resoconto[shape="diamond", style=filled, color="lightgray"];
-    missione -- Resoconto -- report;
+    missione -- Resoconto[label="(1,N)"];
+    Resoconto -- report[label="(1,1)"];
     ///Stesura [membro (1,N) - report (1,N)]
     Stesura[shape="diamond", style=filled, color="lightgray"];
-    membro -- Stesura -- report;
+    membro -- Stesura[label="(1,N)"];
+    Stesura -- report[label="(1,N)"];
     ///Partecipazione [missione (1,N) - membro (1,N)]
     Partecipazione[shape="diamond", style=filled, color="lightgray"];
-    missione -- Partecipazione -- membro;
+    missione -- Partecipazione[label="(1,N)"];
+    Partecipazione -- membro[label="(1,N)"];
     ///Eseguito [intevento (1,N) - membro (0,N)]
     Eseguito[shape="diamond", style=filled, color="lightgray"];
-    intevento -- Eseguito -- membro;
+    intevento -- Eseguito[label="(1,N)"];
+    Eseguito -- membro[label="(0,N)"];
     ///Risorsa_1 [missione (1,N) - sensori (1,N)]
     Risorsa_1[shape="diamond", style=filled, color="lightgray"];
-    missione -- Risorsa_1 -- sensori;
+    missione -- Risorsa_1[label="(1,N)"];
+    Risorsa_1 -- sensori[label="(1,N)"];
     ///Risorsa_2 [missione (1,N) - robot (1,N)]
     Risorsa_2[shape="diamond", style=filled, color="lightgray"];
-    missione -- Risorsa_2 -- robot;
+    missione -- Risorsa_2[label="(1,N)"];
+    Risorsa_2 -- robot[label="(1,N)"];
     ///Analisi [sensori (1,N) - rivelazioni (1,1)]
     Analisi[shape="diamond", style=filled, color="lightgray"];
-    sensori -- Analisi -- rivelazioni;
+    sensori -- Analisi[label="(1,N)"];
+    Analisi -- rivelazioni[label="(1,1)"];
     ///Malfunzionamenti [sensori (1,N) - anomalia (0,1)]
     Malfunzionamenti[shape="diamond", style=filled, color="lightgray"];
-    sensori -- Malfunzionamenti -- anomalia;
+    sensori -- Malfunzionamenti[label="(1,N,)"];
+    Malfunzionamenti -- anomalia[label="(0,1)"];
     ///Risoluzione [anomalia (1,1) - intevento (1,N,)]
     Risoluzione[shape="diamond", style=filled, color="lightgray"];
-    anomalia -- Risoluzione -- intevento;
+    anomalia -- Risoluzione[label="(1,1)"];
+    Risoluzione -- intevento[label="(1,N)"];
     // Varie ed Eventuali
 }
