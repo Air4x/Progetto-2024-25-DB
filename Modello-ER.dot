@@ -83,8 +83,32 @@ graph ER {
     report_statomissione[label="stato"];
     report -- report_statomissione;
     // Relazioni
-    /// scritto da
-    scritto_da[shape="diamond", style=filled, color="lightgray"];
-    report -- scritto_da -- membro;
+    /// Resoconto [missione (1,N) - report (1,1)]
+    Resoconto[shape="diamond", style=filled, color="lightgray"];
+    missione -- Resoconto -- report;
+    ///Stesura [membro (1,N) - report (1,N)]
+    Stesura[shape="diamond", style=filled, color="lightgray"];
+    membro -- Stesura -- report;
+    ///Partecipazione [missione (1,N) - membro (1,N)]
+    Partecipazione[shape="diamond", style=filled, color="lightgray"];
+    missione -- Partecipazione -- membro;
+    ///Eseguito [intevento (1,N) - membro (0,N)]
+    Eseguito[shape="diamond", style=filled, color="lightgray"];
+    intevento -- Eseguito -- membro;
+    ///Risorsa_1 [missione (1,N) - sensori (1,N)]
+    Risorsa_1[shape="diamond", style=filled, color="lightgray"];
+    missione -- Risorsa_1 -- sensori;
+    ///Risorsa_2 [missione (1,N) - robot (1,N)]
+    Risorsa_2[shape="diamond", style=filled, color="lightgray"];
+    missione -- Risorsa_2 -- robot;
+    ///Analisi [sensori (1,N) - rivelazioni (1,1)]
+    Analisi[shape="diamond", style=filled, color="lightgray"];
+    sensori -- Analisi -- rivelazioni;
+    ///Malfunzionamenti [sensori (1,N) - anomalia (0,1)]
+    Malfunzionamenti[shape="diamond", style=filled, color="lightgray"];
+    sensori -- Malfunzionamenti -- anomalia;
+    ///Risoluzione [anomalia (1,1) - intevento (1,N,)]
+    Risoluzione[shape="diamond", style=filled, color="lightgray"];
+    anomalia -- Risoluzione -- intevento;
     // Varie ed Eventuali
 }
