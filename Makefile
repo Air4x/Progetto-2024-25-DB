@@ -1,4 +1,4 @@
-all: main.tex introduzione.tex images/er.png
+all: Tesina.tex introduzione.tex images/er.png
 	lualatex --output-format=pdf Tesina.pdf
 
 images/er.png: Modello-ER.dot
