@@ -97,12 +97,12 @@ graph ER {
     Partecipazione -- membro[label="(1,N)"];
     ///Eseguito [intevento (1,N) - membro (0,N)]
     Eseguito[shape="diamond", style=filled, color="lightgray"];
-    intevento -- Eseguito[label="(1,N)"];
+    intervento -- Eseguito[label="(1,N)"];
     Eseguito -- membro[label="(0,N)"];
     ///Risorsa_1 [missione (1,N) - sensori (1,N)]
     Risorsa_1[shape="diamond", style=filled, color="lightgray"];
     missione -- Risorsa_1[label="(1,N)"];
-    Risorsa_1 -- sensori[label="(1,N)"];
+    Risorsa_1 -- sensore[label="(1,N)"];
     ///Risorsa_2 [missione (1,N) - robot (1,N)]
     Risorsa_2[shape="diamond", style=filled, color="lightgray"];
     missione -- Risorsa_2[label="(1,N)"];
@@ -110,7 +110,7 @@ graph ER {
     ///Analisi [sensori (1,N) - rivelazioni (1,1)]
     Analisi[shape="diamond", style=filled, color="lightgray"];
     sensori -- Analisi[label="(1,N)"];
-    Analisi -- rivelazioni[label="(1,1)"];
+    Analisi -- rilevazione[label="(1,1)"];
     ///Malfunzionamenti [sensori (1,N) - anomalia (0,1)]
     Malfunzionamenti[shape="diamond", style=filled, color="lightgray"];
     sensori -- Malfunzionamenti[label="(1,N,)"];
@@ -118,6 +118,6 @@ graph ER {
     ///Risoluzione [anomalia (1,1) - intevento (1,N,)]
     Risoluzione[shape="diamond", style=filled, color="lightgray"];
     anomalia -- Risoluzione[label="(1,1)"];
-    Risoluzione -- intevento[label="(1,N)"];
+    Risoluzione -- intervento[label="(1,N)"];
     // Varie ed Eventuali
 }
