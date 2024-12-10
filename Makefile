@@ -1,6 +1,8 @@
-all: main.tex introduzione.tex images/er.png
-	lualatex --output-format=pdf main.tex
-	mv main.pdf Tesina.pdf
+all: Tesina.tex introduzione.tex images/er.png
+	lualatex --output-format=pdf Tesina.tex
 
 images/er.png: Modello-ER.dot
 	dot -Tpng -o ./images/er.png Modello-ER.dot
+
+images/er.svg: Modello-ER.dot
+	dot -Tsvg -o ./images/er.svg Modello-ER.svg
