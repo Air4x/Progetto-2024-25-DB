@@ -11,6 +11,7 @@ my $i = 1;
 ###      stampa a schermo se iniza con "% TODO"
 ##   chiudi file
 foreach (@texfiles) {
+  print $_ . ":\n";
   open(my $in, "<", $_); # $in è il file handle creato da open
   while(<$in>){ # <$in> legge una riga dal file-handle $in
     if(/^\% TODO/) { # fa il match con stringhe che iniziano con "% TODO"
