@@ -1,0 +1,19 @@
+* Struttura tesina
+- [ ] Introduzione
+  - [ ] Specifiva informale
+  - [ ] specifica sui dati
+  - [ ] specifica funzionale
+  - [ ] specifica sugli utenti e policy di sicurezza
+- [ ] Progettazione Concettuale
+  - [ ] schema E/R portante
+  - [ ] schema E/R finale
+- Progettazione Logica
+  - trasformazione schema E/R
+  - trasformazione in schema relazionale
+- Progettazione Fisica
+  - Dimensionamento dei dati
+  - Creazione del database
+  - Gestione degli indici
+  - Popolamento della base di dati
+- Operazioni
+- Discussione implementazione web-app
