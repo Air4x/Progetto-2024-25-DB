@@ -109,11 +109,11 @@ graph ER {
     Risorsa_2 -- robot[label="(1,N)"];
     ///Analisi [sensori (1,N) - rivelazioni (1,1)]
     Analisi[shape="diamond", style=filled, color="lightgray"];
-    sensori -- Analisi[label="(1,N)"];
+    sensore -- Analisi[label="(1,N)"];
     Analisi -- rilevazione[label="(1,1)"];
     ///Malfunzionamenti [sensori (1,N) - anomalia (0,1)]
     Malfunzionamenti[shape="diamond", style=filled, color="lightgray"];
-    sensori -- Malfunzionamenti[label="(1,N,)"];
+    sensore -- Malfunzionamenti[label="(1,N,)"];
     Malfunzionamenti -- anomalia[label="(0,1)"];
     ///Risoluzione [anomalia (1,1) - intevento (1,N,)]
     Risoluzione[shape="diamond", style=filled, color="lightgray"];
