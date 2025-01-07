@@ -3,14 +3,55 @@
 Come visto già nella specifica informale, è necessario poter gestire i seguenti dati:
 \subparagraph{Sensori}
 \begin{description}
-        \item[ID] Il codice identificativo del singolo sensore
-        \item[Stato] Lo stato del sensore, così da poter gestire possibili
-        errori di funzionamento
-        \item[Posizione] La posizione del sensore in coordinate classiche
-        (latitudien, longitudine, altitudine)
-        \item[Ultimo Controllo] La data dell'ultimo controllo a cui è stato
-        sottoposto il sensore, sempre per gestire anomalie
-        \item[Tipo] Il tipo di sensore
-        \item[Data di Installazione] La data di posizionamento e installazione
-        del sensore
+\item[ID] Il codice identificativo del singolo sensore
+\item[Stato] Lo stato del sensore, così da poter gestire possibili
+  errori di funzionamento
+\item[Posizione] La posizione del sensore in coordinate classiche
+  (latitudine, longitudine, altitudine)
+\item[Ultimo Controllo] La data dell'ultimo controllo a cui è stato
+  sottoposto il sensore, sempre per gestire anomalie
+\item[Tipo] Il tipo di sensore
+\item[Data di Installazione] La data di posizionamento e installazione
+  del sensore
+\end{description}
+\subparagraph{Robot}
+\begin{description}
+\item[Codice] Il codice identificativo del singolo sensore
+\item[Tipologia] Il tipo di robot utilizzato
+\end{description}
+\subparagraph{Missione}
+\begin{description}
+\item[Codice] Codice di identificazione univoca della missione
+\item[Stato Attuale] Lo stato corrente della missione
+\item[Obbiettivo] L'obbiettivo della missione
+\item[Data Fine] La data in cui la missione è stata completata
+\item[Data Inizio] La data di inizio della missione
+\end{description}
+\subparagraph{Report}
+\begin{description}
+\item[Stato] Lo stato del report
+\end{description}
+\subparagraph{Membro}
+\begin{description}
+\item[Codice] Codice di identificazione del membro d'equipaggio
+\item[Nome e Cognome] I dati anagrafici della persona
+\item[Ruolo] Il ruolo all'interno dell'equipaggio
+\end{description}
+\subparagraph{Anomalia}
+\begin{description}
+\item[Causa] La causa (certa o presunta) dell'anomalia
+\item[Data e Ora] La date e l'ora del rilevamento dell'anomalia
+\item[Livello] Il livello di gravità dell'anomalia
+\end{description}
+\subparagraph{Intervento}
+\begin{description}
+\item[Codice] Codice identificativo del singolo intervento
+\item[Esito] L'esito dell'intervento
+\item[Data] La data prefissata per l'esecuzione dell'intervento
+\item[Descrizione] Il tipo dell'intervento
+\end{description}
+\subparagraph{Rilevazione}
+\begin{description}
+\item[Data e Ora] La data e ora del rilevamento
+\item[Valore] Il valore rilevato
 \end{description}
