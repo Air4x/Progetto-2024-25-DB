@@ -1,5 +1,15 @@
 \section{Specifica utenti e policy di sicurezza}
 Creato lo schema della basi di dati:
-\begin{minted}{sql}
-  CREATE SCHEMA ASTRADM;
-\end{minted}
+\mint{sql}/CREATE SCHEMA ASTRADM;/
+\par
+Si è deciso di creare i seguenti utenti:
+\begin{description}
+\item[Database Administrato] DBA, con controllo completo della base di dati
+  \begin{minted}{sql}
+    CREATE USER astradm_dba IDENTIFIED BY astradm_dba;
+    GRANT DBA TO astradm_dba;
+  \end{minted}
+\item[Admin] Amministratore di sistema, ha i permessi CREATE, DROP, INSERT,UPDATE, DELETE e SELECT, oltre alla
+  possibilità di creare nuove stored procedures
+\item[Operatore] Un operatore ha i permessi INSERT, UPDATE, DELETE, SELECT.
+\end{description}
