@@ -1,5 +1,5 @@
 all: Tesina.tex introduzione.tex images/er.png
-	lualatex --output-format=pdf Tesina.tex
+	lualatex --shell-escape --output-format=pdf Tesina.tex
 
 images/er.png: Modello-ER.dot
 	dot -Tpng -o ./images/er.png Modello-ER.dot
