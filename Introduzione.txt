@@ -1,0 +1,5 @@
+Introduzione
+
+AstroDB nasce con l'intento di fornire un sistema informatico per l'analisi e la gestione dei dati raccolti durante le missioni d'esplorazione spaziali. 
+
+Il sistema permette da parte dei membri dell'equipaggio una gestione completa delle informazioni provenienti dai sensori e fornire un monitoraggio dettagliato delle operazioni in corso. 
