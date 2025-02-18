@@ -1,8 +1,8 @@
 * Struttura tesina
-- [ ] Introduzione
-  - [ ] Specifiva informale
-  - [ ] specifica sui dati
-  - [ ] specifica funzionale
+- [-] Introduzione
+  - [X] Specifiva informale
+  - [X] specifica sui dati
+  - [X] specifica funzionale
   - [ ] specifica sugli utenti e policy di sicurezza
 - [ ] Progettazione Concettuale
   - [ ] schema E/R portante
