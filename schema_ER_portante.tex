@@ -1,26 +1,19 @@
 % TODO: scrivere discussione dello schema ER portante
+% DONE: definire schema ER portante
 \section{Schema E/R portante}
-% TODO: definire schema ER portante
-Dalla analisi della richiesta, le principali entità indentificate sono:
-\begin{itemize}
-\item Missione: affidata dall'agenzia spaziale internazionale per l'esplorazione e analisi dell'ambiente lunare.
-\item Membro : team di specialisti stanziati in bassa orbita lunare.
-\item Sensore: dispositivo a supporto dei membi dell'equipaggio per la raccolta dati nelle varie regioni lunari.
-\item Robot: dispositivo autonomo a supporto dei membi dell'equipaggio per l'operazioni sul campo.
-\item Rilezazione: effetuate dai sensoti per la raccolta dati.
-\item Anomalia: malfunzionamento di un sensore dovuto a varie casistiche .
-\item Intervento: per la riparazione di un sensore non funzionante effetuate dai membri dell'equipaggio.
-\item Report: redatti dai membri dell'equipaggio per indicare lo stato della missione.
-\end{itemize}
-Legate tra di loro con le seguenti relazioni:
-\begin{itemize}
-\item Partecipazione: che va a leggare Membro con MIssione, tramite cui si va ad associare ad una missione i rispettivi membri dell'equipaggio.
-\item Eseguito: che va a leggare Membro con Intervento, medite cui si va ad indentificare il membro dell'equipaggio che ha svoltio un determinato intervanto.
-\item Stesura]:  che va a leggare Membro con Report, identificando cosi report scritti dai vari membri.
-\item Resoconto: che va a leggare Missione con Report, individuando i vari report scritti per le diverse missioni.
-\item Risorsa-1:  che va a leggare Missione con Sensore, identificando i sensori utilizzati per l'analisi durante la missione.
-\item Risorsa-2:  che va a leggare Missione con Robort, indicando i vari robort utilizzati per la missione.
-\item Analisi: che va a leggare Sensore con RIlevazione,per registrare le varie rilevazioni effetuate dai sensori durante le missioni.
-\item Malfunzionamento: che va a leggare Sensore con Anomalia, con cui registrare le vari problematiche che sensori possono avere durante le missioni.
-\item Risoluzione: che va a leggare Anomalia con Intervento, tramite cui si va ad risolvere un malfuzionamento di sensore.
-\end{itemize}
+\begin{figure}
+\includegraphics[width=\linewidth]{images/er-portante.png}
+\caption{Modello E/R portante per \texttt{ASTRADM}}
+\label{fig:er-portante}
+\end{figure}           
+Analizzando le problematiche presentate si è arrivati all'individuazione delle
+seguenti entità fondamentali:
+\begin{description}
+\item[Membro] 
+\item[Missione]
+\item[Report]
+\item[Robot]
+\item[Sensore]
+\end{description}
+Come visibile da \ref{fig:er-portante}
+
