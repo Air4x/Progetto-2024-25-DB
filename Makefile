@@ -1,4 +1,4 @@
-all: Tesina.tex introduzione.tex images/er.png
+all: Tesina.tex introduzione.tex images/er.png images/er-portante.png
 	lualatex --shell-escape --output-format=pdf Tesina.tex
 
 images/er.png: Modello-ER.dot
