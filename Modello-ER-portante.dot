@@ -5,9 +5,6 @@ graph ER {
     membro[shape="box", style=filled, color="lightblue"];
     sensore[shape="box", style=filled, color="lightblue"];
     robot[shape="box", style=filled, color="lightblue"];
-    rilevazione[shape="box", style=filled, color="lightblue"];
-    anomalia[shape="box", style=filled, color="lightblue"];
-    intervento[shape="box", style=filled, color="lightblue"];
     report[shape="box", style=filled, color="lightblue"];
     Resoconto[shape="diamond", style=filled, color="lightgray"];
     missione -- Resoconto[label="(1,N)"];
@@ -18,22 +15,10 @@ graph ER {
     Partecipazione[shape="diamond", style=filled, color="lightgray"];
     missione -- Partecipazione[label="(1,N)"];
     Partecipazione -- membro[label="(1,N)"];
-    Eseguito[shape="diamond", style=filled, color="lightgray"];
-    intervento -- Eseguito[label="(1,N)"];
-    Eseguito -- membro[label="(0,N)"];
     Risorsa_1[shape="diamond", style=filled, color="lightgray"];
     missione -- Risorsa_1[label="(1,N)"];
     Risorsa_1 -- sensore[label="(1,N)"];
     Risorsa_2[shape="diamond", style=filled, color="lightgray"];
     missione -- Risorsa_2[label="(1,N)"];
     Risorsa_2 -- robot[label="(1,N)"];
-    Analisi[shape="diamond", style=filled, color="lightgray"];
-    sensore -- Analisi[label="(1,N)"];
-    Analisi -- rilevazione[label="(1,1)"];
-    Malfunzionamenti[shape="diamond", style=filled, color="lightgray"];
-    sensore -- Malfunzionamenti[label="(1,N,)"];
-    Malfunzionamenti -- anomalia[label="(0,1)"];
-    Risoluzione[shape="diamond", style=filled, color="lightgray"];
-    anomalia -- Risoluzione[label="(1,1)"];
-    Risoluzione -- intervento[label="(1,N)"];
 }
