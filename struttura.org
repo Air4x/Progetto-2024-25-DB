@@ -1,19 +1,19 @@
 * Struttura tesina
-- [-] Introduzione
+- [X] Introduzione
   - [X] Specifiva informale
   - [X] specifica sui dati
   - [X] specifica funzionale
-  - [ ] specifica sugli utenti e policy di sicurezza
-- [ ] Progettazione Concettuale
-  - [ ] schema E/R portante
-  - [ ] schema E/R finale
-- Progettazione Logica
-  - trasformazione schema E/R
-  - trasformazione in schema relazionale
-- Progettazione Fisica
-  - Dimensionamento dei dati
-  - Creazione del database
-  - Gestione degli indici
-  - Popolamento della base di dati
+  - [X] specifica sugli utenti e policy di sicurezza
+- [X] Progettazione Concettuale
+  - [X] schema E/R portante
+  - [X] schema E/R finale
+- [ ] Progettazione Logica
+  - [ ] trasformazione schema E/R
+  - [ ] trasformazione in schema relazionale
+- [ ] Progettazione Fisica
+  - [ ] Dimensionamento dei dati
+  - [ ] Creazione del database
+  - [ ] Gestione degli indici
+  - [ ] Popolamento della base di dati
 - Operazioni
 - Discussione implementazione web-app
