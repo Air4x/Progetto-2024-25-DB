@@ -1,7 +1,9 @@
-all: Tesina.tex introduzione.tex immagini
+all: src immagini
 	lualatex --shell-escape --output-format=pdf Tesina.tex
 
 immagini: images/er.png images/er-portante.png images/er-finale.png
+
+src: src/Tesina.tex src/introduzione.tex src/progettazione-concettuale.tex src/progettazione-logica.tex
 
 images/er.png: Modello-ER.dot
 	dot -Tpng -o ./images/er.png Modello-ER.dot
