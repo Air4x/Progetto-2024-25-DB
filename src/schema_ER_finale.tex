@@ -2,21 +2,21 @@
 \section{Schema E/R finale}
 Da una analisi più approfondia si vista la necessità di introdurre delle nuove entità:
 \begin{description}
-  % TODO: aggiungere immagini entità
+% TODO: aggiungere immagini entità
 \item [Anomalia] con cui si va ad indicare un Sensore non funzionante.
 \item [Intervento] per la riparazione di un Sensore non funzionante.
 \item [Rilevazione] con cui si va indentificare i dati ralcolti dai sensori.
 \end{description}
 Caratterizate dalle seguenti relazioni:
 \begin{description}
-  % TODO: Aggiungere immagini relazioni
+% TODO: Aggiungere immagini relazioni
 \item [Analisi] che va a legare Rivelazioni e Sensore, con cui si va ad indicare i dati racolti dai vari sensori.
 \item [Malfunzionamento] che va a legare Sensore ed Anomalia, tramite cui si individuano i sensori non funzionanti.
 \item [Risoluzione] che va ad legare Anomalia ed Intervento, azine con cui si va ad riparere un sensore non funzionante.
 \end{description}
 Nel modello \ref{fig:er-portante} sono riporta le \textbf{cardinalita}specificando il numero minimo e il numero massimo che, le occorrenze, possono assumere in ciascuna associazione, rispetto alle entità. Le cardinalità delle relazioni sono le seguenti: 
 \begin{description}
-  % TODO: Aggiungere immagini relazioni
+% TODO: Aggiungere immagini relazioni
 \item[Partecipazione] di tipo \textbf{molti a molti (N,N)}; un membro
   dell'equipaggio può essere stato selezionato per la partecipazione
   di diverse missioni spaziali, mentre una missione richiede almeno un

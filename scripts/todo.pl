@@ -2,7 +2,7 @@
 
 use v5.38;
 
-my $dir = "."; # cartella corrente
+my $dir = "./src"; # cartella corrente
 my @texfiles = glob($dir . "/*.tex"); # lista di file con estensione .tex
 my $i = 1;
 # per ogni file trovato:
