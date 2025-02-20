@@ -2,7 +2,7 @@
 In questa sezione ci occupiamo della creazione dello schema relazionale partendo dal
 modello E/R in \ref{fig:er-finale}. Per la traduzione da modello E/R a schema relazionale
 si seguono le seguenti regole:
-\begin{enumarate}
+\begin{enumerate}
 \item Ciascuna \textit{entità} viene trasformata in una relazione,
   dove gli attributi dell'entità diventano gli attributi della
   relazione, con la chiave primaria dell'entità che diventa
@@ -16,27 +16,29 @@ si seguono le seguenti regole:
     dell’associazione, oltre che il suo identificatore che sarà soggetto sia ad un vincolo di unicità
     che di integrità referenziale con il corrispondente attributo dell’altra entità.
   \end{description}
-\end{enumarate}
+\end{enumerate}
 
 % TODO: Creare schema relazionale
 Seguendo queste regole si ottiene il seguente schema:
 \begin{itemize}
-  % TODO: Completare SENSORE
-\item \texttt{ANOMALIE}();
-  % TODO: Completare SENSORE
-\item \texttt{INTERVENTI}();
-  % TODO: Completare SENSORE
-\item \texttt{MEMBRI}();
-  % TODO: Completare SENSORE
-\item \texttt{MISSIONI}(\underline{codice},);
-  % TODO: Completare SENSORE
-\item \texttt{REPORT}();
-  % TODO: Completare SENSORE
-\item \texttt{RILEVAZIONI}();
-  % TODO: Completare SENSORE
-\item \texttt{ROBOT}();
-  % TODO: Completare SENSORE
-\item \texttt{SENSORI}();
+  % TODO: Completare ANOMALIE
+\item \texttt{ANOMALIE}(\underline{data}, \underline{ora}, causa, livello, SENSORE: sensori);
+  % TODO: Completare INTERVENTI
+\item \texttt{INTERVENTI}(\underline{codice}, esito, calibrazione, riparazione, sostituzione, dataPrefissata);
+  % TODO: Completare MEMBRI
+\item \texttt{MEMBRI}(\underline{codice}, nome, cognome, ruolo);
+  % TODO: Completare MISSIONI
+\item \texttt{MISSIONI}(\underline{codice}, dataFine, obbiettivo, dataInizio, statoAttuale);
+  % TODO: Aggiungere Risorsa_1
+  % TODO: Completare REPORT
+\item \texttt{REPORT}(stato, AUTORE: membri);
+  % TODO: Completare RIVELAZIONI
+\item \texttt{RILEVAZIONI}(\underline{data}, \underline{ora}, valore, SENSORE: sensori);
+  % TODO: Completare ROBOT
+\item \texttt{ROBOT}(\underline{codice}, tipologia);
+  % TODO: Aggiungere Risorsa_2
+  % TODO: Completare SENSORI
+\item \texttt{SENSORI}(\underline{ID}, stato, dataInstallazione, tipo, ultimoControllo, latitudine, altitudine, longitudine);
 \end{itemize}
 
 %%% Local Variables:
