@@ -1,0 +1,30 @@
+\section{Creazione Schema Relazionale}
+In questa sezione ci occupiamo della creazione dello schema relazionale partendo dal
+modello E/R in \ref{fig:er-finale}. Per la traduzione da modello E/R a schema relazionale
+si seguono le seguenti regole:
+\begin{enumarate}
+\item Ciascuna \textit{entità} viene trasformata in una relazione,
+  dove gli attributi dell'entità diventano gli attributi della
+  relazione, con la chiave primaria dell'entità che diventa
+  l'identificatore della relazione
+\item Le relazioni vengono tradotte in base alla loro cardinalità:
+  \begin{description}
+  \item[uno a uno] si traducono aggiungendo alle relazioni che traducono le entità dal lato uno gli
+    attributi delle associazioni e gli identificatori delle entità lato molti. Questi ultimi saranno soggetti
+    ad un vincolo di integrità referenziale con il corrispondente attributo delle entità dal lato molti
+  \item[uno a molti] si traducono aggiungendo alla relazione che traduce una delle due entità gli attributi
+    dell’associazione, oltre che il suo identificatore che sarà soggetto sia ad un vincolo di unicità
+    che di integrità referenziale con il corrispondente attributo dell’altra entità.
+  \end{description}
+\end{enumarate}
+
+% TODO: Creare schema relazionale
+Seguendo queste regole si ottiene il seguente schema:
+\begin{itemize}
+  % TODO: Completare SENSORE
+\item \texttt{SENSORE}();
+\end{itemize}
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: "Tesina"
+%%% End:
