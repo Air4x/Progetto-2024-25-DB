@@ -1,5 +1,5 @@
 all: src immagini
-	lualatex --shell-escape --output-format=pdf Tesina.tex
+	lualatex --shell-escape --output-format=pdf src/Tesina.tex
 
 immagini: images/er.png images/er-portante.png images/er-finale.png
 
