@@ -1,180 +1,177 @@
 \section{Dimensionamento dei dati}
-%TODO:Completare inserendo in numero di tuple
+% TODO:Completare inserendo in numero di tuple
 Per andare fare una stima sul volume che adranno ad occupare i vari dati in base allla loro tipologia, ci baseremo su:
 \begin{itemize}
 \item Tabelle/Schemi ottenute in fase di progettazione logica (sezione 3.2)
 \item Il numero di missioni previste dall'agenzia spaziale
 \end{itemize}
 \subsection{Anomalia}
-\begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|}
- \hline
- \multicolumn{3}{|c|}{\textbf{ANOMALIA}} \\
- \hline
-Atributo & Tipo & Spazio[BYTE] \\
- \hline
-data & DATE & 7 \\
-ora & DATE & 7 \\
-causa & VARCHAR(30) & 30 \\
-livello & INTEGER & 4 \\
-sensore & INTEGER & 4 \\
- \hline
+\begin{tabular}{|c|c|c|}
+  \hline
+  \multicolumn{3}{|c|}{\textbf{ANOMALIA}}\\
+  \hline
+  Attributo & Tipo & Spazio[BYTE] \\
+  \hline
+  data & DATE & 7 \\
+  ora & DATE & 7 \\
+  causa & VARCHAR(30) & 30 \\
+  livello & INTEGGER & 4 \\
+  sensore & INTEGER & 4 \\
+  \hline
 \end{tabular}
 \begin{equation}
-\begin{aligned}
-&Danomalia=(Ddata + Dora +Dcausa +Dlivello + Dsensore) * Nanomalie=\\
-&=(7+7+30+4+4)*x*10^6=x*49.6  \textbf{MB}
-\end{aligned}
+  \begin{aligned}
+    &Danomalia=(Ddata + Dora +Dcausa +Dlivello + Dsensore) * Nanomalie=\\
+    &=(7+7+30+4+4)*x*10^6=x*49.6  \text{\textbf{MB}}\\
+  \end{aligned}
 \end{equation}
 \subsection{Interventi}
-\begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|}
- \hline
- \multicolumn{3}{|c|}{\textbf{INTERVENTI}} \\
- \hline
-Atributo & Tipo & Spazio[BYTE] \\
- \hline
-codice & INTEGER & 4 \\
-esito & VARCHAR(20) & 20 \\
-calibrazione & VARCHAR(20) & 20 \\
-riparazione & VARCHAR(20) & 20 \\
-sostituzione & VARCHAR(20) & 20 \\
-dataPrefissata & DATE & 7 \\
- \hline
+\begin{tabular}{ |c|c|c|}
+  \hline
+  \multicolumn{3}{|c|}{\textbf{INTERVENTI}} \\
+  \hline
+  Atributo & Tipo & Spazio[BYTE] \\
+  \hline
+  codice & INTEGER & 4 \\
+  esito & VARCHAR(20) & 20 \\
+  calibrazione & VARCHAR(20) & 20 \\
+  riparazione & VARCHAR(20) & 20 \\
+  sostituzione & VARCHAR(20) & 20 \\
+  dataPrefissata & DATE & 7 \\
+  \hline
 \end{tabular}
 \begin{equation}
-\begin{aligned}
-&Dinterventi =\\
-&=(Dcodice + Desito +Dcalibrazione +Driparazione + Dsostituzione + DdataPrefissata) * Nint =\\
-&=(4+20+20+20+20+7)*x*10^6= \textbf{MB}
-\end{aligned}
+  \begin{aligned}
+    &Dinterventi =\\
+    &=(Dcodice + Desito +Dcalibrazione +Driparazione + Dsostituzione + DdataPrefissata) * Nint =\\
+    &=(4+20+20+20+20+7)*x*10^6= \textbf{MB}
+  \end{aligned}
 \end{equation}
 \subsection{Membri}
-\begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|}
- \hline
- \multicolumn{3}{|c|}{\textbf{MEMBRI}}\\
- \hline
-Atributo & Tipo & Spazio[BYTE] \\
- \hline
-codice & INTEGER & 4 \\
-nome & VARCHAR(30) & 30 \\
-cognome & VARCHAR(30) & 30 \\
-ruolo & VARCHAR(30) & 30\\
- \hline
+\begin{tabular}{ |c|c|c|}
+  \hline
+  \multicolumn{3}{|c|}{\textbf{MEMBRI}}\\
+  \hline
+  Atributo & Tipo & Spazio[BYTE] \\
+  \hline
+  codice & INTEGER & 4 \\
+  nome & VARCHAR(30) & 30 \\
+  cognome & VARCHAR(30) & 30 \\
+  ruolo & VARCHAR(30) & 30\\
+  \hline
 \end{tabular}
 \begin{equation}
-\begin{aligned}
-&Dmembri =\\
-&=(Dcodice + Dnome +Dcognome +Druolo) * Nmembri =\\
-&=(4+30+30+30) *x*10^6= \textbf{MB}
-\end{aligned}
+  \begin{aligned}
+    &Dmembri =\\
+    &=(Dcodice + Dnome +Dcognome +Druolo) * Nmembri =\\
+    &=(4+30+30+30) *x*10^6= \textbf{MB}
+  \end{aligned}
 \end{equation}
 \subsection{Missioni}
-\begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|}
- \hline
- \multicolumn{3}{|c|}{\textbf{MISSIONI}}\\
- \hline
-Atributo & Tipo & Spazio[BYTE] \\
- \hline
-codice & INTEGER & 4 \\
-dataFine & DATE & 7 \\
-obbiettivo & VARCHAR(100) & 100 \\
-dataInizio & DATE & 7 \\
-statoAttuale  & VARCHAR(30) & 30 \\
-dataFine & VARCHAR(30) & 30 \\
- \hline
-\end{tabular}
+\begin{tabular}{ |c|c|c|}
+  \hline
+  \multicolumn{3}{|c|}{\textbf{MISSIONI}}\\
+  \hline
+  Atributo & Tipo & Spazio[BYTE] \\
+  \hline
+  codice & INTEGER & 4 \\
+  dataFine & DATE & 7 \\
+  obbiettivo & VARCHAR(100) & 100 \\
+  dataInizio & DATE & 7 \\
+  statoAttuale  & VARCHAR(30) & 30 \\
+  dataFine & VARCHAR(30) & 30 \\
+  \hline
 \end{tabular}
 \begin{equation}
-\begin{aligned}
-&Dmissioni =\\
-&=(Dcodice+DdataFine+Dobbietivo+DdataInizio+DstatoA+DdataFine)*Nmiss=\\
-&=(4+7+100+7+30+30)*x*10^6= \textbf{MB}
-\end{aligned}
+  \begin{aligned}
+    &Dmissioni =\\
+    &=(Dcodice+DdataFine+Dobbietivo+DdataInizio+DstatoA+DdataFine)*Nmiss=\\
+    &=(4+7+100+7+30+30)*x*10^6= \textbf{MB}
+  \end{aligned}
 \end{equation}
 \subsection{Report}
-\begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|}
- \hline
- \multicolumn{3}{|c|}{\textbf{REPORT}}\\
- \hline
-Atributo & Tipo & Spazio[BYTE] \\
- \hline
-stato & VARCHAR(30) & 30 \\
-autore & VARCHAR(30) & 30\\
- \hline
+\begin{tabular}{ |c|c|c|}
+  \hline
+  \multicolumn{3}{|c|}{\textbf{REPORT}}\\
+  \hline
+  Atributo & Tipo & Spazio[BYTE] \\
+  \hline
+  stato & VARCHAR(30) & 30 \\
+  autore & VARCHAR(30) & 30\\
+  \hline
 \end{tabular}
-\end{tabular}
+
 \begin{equation}
-\begin{aligned}
-&Dreport =\\
-&=(Dstato+Dautore)*Nreport=\\
-&=(30+30)*x*10^6= \textbf{MB}
-\end{aligned}
+  \begin{aligned}
+    &Dreport =\\
+    &=(Dstato+Dautore)*Nreport=\\
+    &=(30+30)*x*10^6= \textbf{MB}
+  \end{aligned}
 \end{equation}
 \subsection{Rilevazioni}
-\begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|}
- \hline
- \multicolumn{3}{|c|}{\textbf{RILEVAZIONI}}\\
- \hline
-Atributo & Tipo & Spazio[BYTE] \\
- \hline
-data & DATE & 7 \\
-ora & DATE &  7 \\
-valore & INTEGER & 4 \\
-sensore & INTEGER & 4 \\
- \hline
-\end{tabular}
+\begin{tabular}{ |c|c|c|}
+  \hline
+  \multicolumn{3}{|c|}{\textbf{RILEVAZIONI}}\\
+  \hline
+  Atributo & Tipo & Spazio[BYTE] \\
+  \hline
+  data & DATE & 7 \\
+  ora & DATE &  7 \\
+  valore & INTEGER & 4 \\
+  sensore & INTEGER & 4 \\
+  \hline
 \end{tabular}
 \begin{equation}
-\begin{aligned}
-&Drivelazione =\\
-&=(Ddata+Dora+valore+Dsensore)*Nrivelazione=\\
-&=(7+7+4+4+)*x*10^6= \textbf{MB}
-\end{aligned}
+  \begin{aligned}
+    &Drivelazione =\\
+    &=(Ddata+Dora+valore+Dsensore)*Nrivelazione=\\
+    &=(7+7+4+4+)*x*10^6= \textbf{MB}
+  \end{aligned}
 \end{equation}
 \subsection{Robot}
-\begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|}
- \hline
- \multicolumn{3}{|c|}{\textbf{ROBOT}}\\
- \hline
-Atributo & Tipo & Spazio[BYTE] \\
- \hline
-codice & INTEGER & 4\\
-tipologia & VARCHAR(30) & 30\\
- \hline
-\end{tabular}
+\begin{tabular}{ |c|c|c|}
+  \hline
+  \multicolumn{3}{|c|}{\textbf{ROBOT}}\\
+  \hline
+  Atributo & Tipo & Spazio[BYTE] \\
+  \hline
+  codice & INTEGER & 4\\
+  tipologia & VARCHAR(30) & 30\\
+  \hline
 \end{tabular}
 \begin{equation}
-\begin{aligned}
-&Drobot =\\
-&=(Dcodice+Dtipologia)*Nrobot=\\
-&=(4+30)*x*10^6= \textbf{MB}
-\end{aligned}
+  \begin{aligned}
+    &Drobot =\\
+    &=(Dcodice+Dtipologia)*Nrobot=\\
+    &=(4+30)*x*10^6= \textbf{MB}
+  \end{aligned}
 \end{equation}
 \subsection{Sensori}
-\begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|}
- \hline
- \multicolumn{3}{|c|}{\textbf{SENSORI}}\\
- \hline
-Atributo & Tipo & Spazio[BYTE] \\
- \hline
-ID & INTEGER & 4 \\
-stato & VARCHAR(30) & 30\\
-dataInstallazione & DATE & 7\\
-tipo & VARCHAR(30) & 30\\
-ultimoControllo & DATE & 7\\
-latitudine & DECIMAL(10,4) & 9\\
-altitudine & DECIMAL(10,4) & 9\\
-longitudine & DECIMAL(10,4) & 9\\
- \hline
+\begin{tabular}{ |c|c|c|}
+  \hline
+  \multicolumn{3}{|c|}{\textbf{SENSORI}}\\
+  \hline
+  Atributo & Tipo & Spazio[BYTE] \\
+  \hline
+  ID & INTEGER & 4 \\
+  stato & VARCHAR(30) & 30\\
+  dataInstallazione & DATE & 7\\
+  tipo & VARCHAR(30) & 30\\
+  ultimoControllo & DATE & 7\\
+  latitudine & DECIMAL(10,4) & 9\\
+  altitudine & DECIMAL(10,4) & 9\\
+  longitudine & DECIMAL(10,4) & 9\\
+  \hline
 \end{tabular}
 \begin{equation}
-\begin{aligned}
-&Dsensore =\\
-&=(Did+Dstato+DdataInst+DultCont+Dlat+Dalt+long)*Nsen=\\
-&=(4+30+7+30+7+9+9+9)*x*10^6= \textbf{MB}
-\end{aligned}
+  \begin{aligned}
+    &Dsensore =\\
+    &=(Did+Dstato+DdataInst+DultCont+Dlat+Dalt+long)*Nsen=\\
+    &=(4+30+7+30+7+9+9+9)*x*10^6= \textbf{MB}
+  \end{aligned}
 \end{equation}
-\subsection{\textbf{Gestione dello spazio e dell'affidabilità}}
+\subsection{Gestione dello spazio e dell'affidabilità}
 Dalle stime fatte precedentemente possiamo stimare un volume di informazioni pari:
 \begin{equation}
-Dtot=X\\
+  Dtot=X\\
 \end{equation}
