@@ -21,8 +21,8 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
 \end{tabular}
 \begin{equation}
   \begin{aligned}
-    &Danomalia=(Ddata + Dora +Dcausa +Dlivello + Dsensore) * Nanomalie=\\
-    &=(7+7+30+4+4)*x*10^6=x*49.6  \text{\textbf{MB}}\\
+    D_{\text{anomalia}}&=(D_{\text{data}} + D_{\text{ora}} +D_{\text{causa}} +D_{\text{livello}} + D_{\text{sensore}}) \cdot N_{\text{anomalie}}=\\
+    &=(7+7+30+4+4)\cdot x\cdot 10^6=x\cdot 49.6  \text{\textbf{MB}}\\
   \end{aligned}
 \end{equation}
 \subsection{Interventi}
@@ -42,9 +42,9 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
 \end{tabular}
 \begin{equation}
   \begin{aligned}
-    &Dinterventi =\\
-    &=(Dcodice + Desito +Dcalibrazione +Driparazione + Dsostituzione + DdataPrefissata) * Nint =\\
-    &=(4+20+20+20+20+7)*x*10^6= \textbf{MB}
+    D_{\text{interventi}} &=\\
+    &=(D_{\text{codice}} + D_{\text{esito}} +D_{\text{calibrazione}} +D_{\text{riparazione}} + D_{\text{sostituzione}} + D_{text{dataPrefissata}}) \cdot  Nint =\\
+    &=(4+20+20+20+20+7)\cdot x\cdot 10^6= \textbf{MB}
   \end{aligned}
 \end{equation}
 \subsection{Membri}
@@ -62,9 +62,9 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
 \end{tabular}
 \begin{equation}
   \begin{aligned}
-    &Dmembri =\\
-    &=(Dcodice + Dnome +Dcognome +Druolo) * Nmembri =\\
-    &=(4+30+30+30) *x*10^6= \textbf{MB}
+    D_{\text{membri}} &=\\
+    &=(D_{\text{codice}} + D_{\text{nome}} +D_{\text{cognome}} +D_{\text{ruolo}}) \cdot  N_{\text{membri}} =\\
+    &=(4+30+30+30) \cdot x\cdot 10^6= \textbf{MB}
   \end{aligned}
 \end{equation}
 \subsection{Missioni}
@@ -84,13 +84,13 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
 \end{tabular}
 \begin{equation}
   \begin{aligned}
-    &Dmissioni =\\
-    &=(Dcodice+DdataFine+Dobbietivo+DdataInizio+DstatoA+DdataFine)*Nmiss=\\
-    &=(4+7+100+7+30+30)*x*10^6= \textbf{MB}
+    &D_{\text{missioni}} =\\
+    &=(D_{\text{codice}}+D_{\text{dataFine}}+D_{\text{obbietivo}}+D_{\text{dataInizio}}+D_{\text{statoA}}+D_{\text{dataFine}})\cdot N_{\text{miss}}=\\
+    &=(4+7+100+7+30+30)\cdot x\cdot 10^6= \textbf{MB}
   \end{aligned}
 \end{equation}
 \subsection{Report}
-\begin{tabular}{ |c|c|c|}
+\begin{tabular}{|c|c|c|}
   \hline
   \multicolumn{3}{|c|}{\textbf{REPORT}}\\
   \hline
@@ -103,13 +103,13 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
 
 \begin{equation}
   \begin{aligned}
-    &Dreport =\\
-    &=(Dstato+Dautore)*Nreport=\\
-    &=(30+30)*x*10^6= \textbf{MB}
+    D_{\text{report}} &=\\
+    &=(D_{\text{stato}}+D_{\text{autore}})\cdot N_{\text{report}}=\\
+    &=(30+30)\cdot x\cdot 10^6= \textbf{MB}
   \end{aligned}
 \end{equation}
 \subsection{Rilevazioni}
-\begin{tabular}{ |c|c|c|}
+\begin{tabular}{|c|c|c|}
   \hline
   \multicolumn{3}{|c|}{\textbf{RILEVAZIONI}}\\
   \hline
@@ -123,9 +123,9 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
 \end{tabular}
 \begin{equation}
   \begin{aligned}
-    &Drivelazione =\\
-    &=(Ddata+Dora+valore+Dsensore)*Nrivelazione=\\
-    &=(7+7+4+4+)*x*10^6= \textbf{MB}
+    D_{\text{rivelazione}} &=\\
+    &=(D_{\text{data}}+D_{\text{ora}}+D_{\text{valore}}+D_{\text{sensore}})\cdot N_{\text{rivelazione}}=\\
+    &=(7+7+4+4+)\cdot x\cdot 10^6= \textbf{MB}
   \end{aligned}
 \end{equation}
 \subsection{Robot}
@@ -141,9 +141,9 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
 \end{tabular}
 \begin{equation}
   \begin{aligned}
-    &Drobot =\\
-    &=(Dcodice+Dtipologia)*Nrobot=\\
-    &=(4+30)*x*10^6= \textbf{MB}
+    D_{\text{robot}} &=\\
+    &=(D_{\text{codice}}+D_{\text{tipologia}})\cdot N_{\text{robot}}=\\
+    &=(4+30)\cdot x\cdot 10^6= \textbf{MB}
   \end{aligned}
 \end{equation}
 \subsection{Sensori}
@@ -165,13 +165,13 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
 \end{tabular}
 \begin{equation}
   \begin{aligned}
-    &Dsensore =\\
-    &=(Did+Dstato+DdataInst+DultCont+Dlat+Dalt+long)*Nsen=\\
-    &=(4+30+7+30+7+9+9+9)*x*10^6= \textbf{MB}
+    D_{\text{sensore}} &=\\
+    &=(D_{\text{id}}+D_{\text{stato}}+D_{\text{dataInst}}+D_{\text{ultCont}}+D_{\text{lat}}+D_{\text{alt}}+D_{\text{long}})\cdot N_{\text{sen}}=\\
+    &=(4+30+7+30+7+9+9+9)\cdot x\cdot 10^6= \textbf{MB}
   \end{aligned}
 \end{equation}
 \subsection{Gestione dello spazio e dell'affidabilità}
 Dalle stime fatte precedentemente possiamo stimare un volume di informazioni pari:
 \begin{equation}
-  Dtot=X\\
+  D_{\text{tot}}=X\\
 \end{equation}
