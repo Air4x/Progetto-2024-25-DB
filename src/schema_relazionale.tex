@@ -25,7 +25,7 @@ si seguono le seguenti regole:
 Seguendo queste regole si ottiene il seguente schema:
 \begin{itemize}
 % TODO: Completare ANOMALIE
-\item \texttt{ANOMALIE}(\underline{data}, \underline{ora}, causa, livello,SENSORI: sensorie,};
+\item \texttt{ANOMALIE}(\underline{data}, \underline{ora}, causa, livello,SENSORI: sensorie);
 % TODO: Completare INTERVENTI
 \item \texttt{INTERVENTI}(\underline{codice}, esito, calibrazione, riparazione, sostituzione, dataPrefissata);
 % TODO: Completare MEMBRI
@@ -33,7 +33,7 @@ Seguendo queste regole si ottiene il seguente schema:
 % TODO: Completare MISSIONI
 \item \texttt{MISSIONI}(\underline{codice}, dataFine, obbiettivo, dataInizio, statoAttuale,REPORT:resoconto);
 % TODO: Aggiungere Risorsa_1
-\item \texttt{RISORSA_1}(\underline{SENSORI:sensore},\underline{MISSIONI:missione});
+\item \texttt{RISORSA\textsubscript{1}}(\underline{SENSORI:sensore},\underline{MISSIONI:missione});
 % TODO: Completare REPORT
 \item \texttt{REPORT}(\underline{stato}, MEMBRI:autore);
 % TODO: Completare RIVELAZIONI
@@ -41,7 +41,7 @@ Seguendo queste regole si ottiene il seguente schema:
 % TODO: Completare ROBOT
 \item \texttt{ROBOT}(\underline{codice}, tipologia);
 % TODO: Aggiungere Risorsa_2
-\item \texttt{RISORSA_2}(\underline{Robot:robot},\underline{MISSIONI:missione});
+\item \texttt{RISORSA\textsubscript{2}}(\underline{Robot:robot},\underline{MISSIONI:missione});
 % TODO: Completare SENSORI
 \item \texttt{SENSORI}(\underline{ID}, stato, dataInstallazione, tipo, ultimoControllo, latitudine, altitudine, longitudine);
 \end{itemize}
