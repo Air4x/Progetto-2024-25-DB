@@ -8,13 +8,16 @@ si seguono le seguenti regole:
   relazione, con la chiave primaria dell'entità che diventa
   l'identificatore della relazione
 \item Le relazioni vengono tradotte in base alla loro cardinalità:
-  \begin{description}
-  \item[uno a uno] si traducono aggiungendo alle relazioni che traducono le entità dal lato uno gli
+\begin{description}
+\item [uno a uno] si traducono aggiungendo alle relazioni che traducono le entità dal lato uno gli
     attributi delle associazioni e gli identificatori delle entità lato molti. Questi ultimi saranno soggetti
     ad un vincolo di integrità referenziale con il corrispondente attributo delle entità dal lato molti
-  \item[uno a molti] si traducono aggiungendo alla relazione che traduce una delle due entità gli attributi
+\item [uno a molti] si traducono aggiungendo alla relazione che traduce una delle due entità gli attributi
     dell’associazione, oltre che il suo identificatore che sarà soggetto sia ad un vincolo di unicità
     che di integrità referenziale con il corrispondente attributo dell’altra entità.
+\item [molti a molti] si traduce in un relazione con lo stesso nome avente come attributi, gli attributi dell'associazione  
+  e gli indentificativi dell'entita coinvolte, dove quest'ultime vanno a costituire un vincolo di integrita referenziale con
+  l'attributo corrispondente dell'entità.
   \end{description}
 \end{enumerate}
 
@@ -22,21 +25,23 @@ si seguono le seguenti regole:
 Seguendo queste regole si ottiene il seguente schema:
 \begin{itemize}
 % TODO: Completare ANOMALIE
-\item \texttt{ANOMALIE}(\underline{data}, \underline{ora}, causa, livello, SENSORE: sensori);
+\item \texttt{ANOMALIE}(\underline{data}, \underline{ora}, causa, livello,SENSORI: sensorie,};
 % TODO: Completare INTERVENTI
 \item \texttt{INTERVENTI}(\underline{codice}, esito, calibrazione, riparazione, sostituzione, dataPrefissata);
 % TODO: Completare MEMBRI
 \item \texttt{MEMBRI}(\underline{codice}, nome, cognome, ruolo);
 % TODO: Completare MISSIONI
-\item \texttt{MISSIONI}(\underline{codice}, dataFine, obbiettivo, dataInizio, statoAttuale);
+\item \texttt{MISSIONI}(\underline{codice}, dataFine, obbiettivo, dataInizio, statoAttuale,REPORT:resoconto);
 % TODO: Aggiungere Risorsa_1
+\item \texttt{RISORSA_1}(\underline{SENSORI:sensore},\underline{MISSIONI:missione});
 % TODO: Completare REPORT
-\item \texttt{REPORT}(stato, AUTORE: membri);
+\item \texttt{REPORT}(\underline{stato}, MEMBRI:autore);
 % TODO: Completare RIVELAZIONI
-\item \texttt{RILEVAZIONI}(\underline{data}, \underline{ora}, valore, SENSORE: sensori);
+\item \texttt{RILEVAZIONI}(\underline{data}, \underline{ora}, valore, SENSORI: sensore);
 % TODO: Completare ROBOT
 \item \texttt{ROBOT}(\underline{codice}, tipologia);
 % TODO: Aggiungere Risorsa_2
+\item \texttt{RISORSA_2}(\underline{Robot:robot},\underline{MISSIONI:missione});
 % TODO: Completare SENSORI
 \item \texttt{SENSORI}(\underline{ID}, stato, dataInstallazione, tipo, ultimoControllo, latitudine, altitudine, longitudine);
 \end{itemize}
