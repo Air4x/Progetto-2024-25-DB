@@ -30,7 +30,7 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
   \hline
   \multicolumn{3}{|c|}{\textbf{INTERVENTI}} \\
   \hline
-  Atributo & Tipo & Spazio(Byte) \\
+  Attributo & Tipo & Spazio(Byte) \\
   \hline
   codice & INTEGER & 4 \\
   esito & VARCHAR(20) & 20 \\
@@ -42,8 +42,7 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
 \end{tabular}
 \begin{equation}
   \begin{aligned}
-    D_{\text{interventi}} &=\\
-    &=(D_{\text{codice}} + D_{\text{esito}} +D_{\text{calibrazione}} +D_{\text{riparazione}} + D_{\text{sostituzione}} + D_{text{dataPrefissata}}) \cdot  Nint =\\
+    D_{\text{interventi}} &=(D_{\text{codice}} + D_{\text{esito}} +D_{\text{calibrazione}} +D_{\text{riparazione}} + D_{\text{sostituzione}} + D_{text{dataPrefissata}}) \cdot  Nint =\\
     &=(4+20+20+20+20+7)\cdot x\cdot 10^6= \textbf{MB}
   \end{aligned}
 \end{equation}
@@ -52,7 +51,7 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
   \hline
   \multicolumn{3}{|c|}{\textbf{MEMBRI}}\\
   \hline
-  Atributo & Tipo & Spazio(Byte) \\
+  Attributo & Tipo & Spazio(Byte) \\
   \hline
   codice & INTEGER & 4 \\
   nome & VARCHAR(30) & 30 \\
@@ -62,8 +61,7 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
 \end{tabular}
 \begin{equation}
   \begin{aligned}
-    D_{\text{membri}} &=\\
-    &=(D_{\text{codice}} + D_{\text{nome}} +D_{\text{cognome}} +D_{\text{ruolo}}) \cdot  N_{\text{membri}} =\\
+    D_{\text{membri}} &=(D_{\text{codice}} + D_{\text{nome}} +D_{\text{cognome}} +D_{\text{ruolo}}) \cdot  N_{\text{membri}} =\\
     &=(4+30+30+30) \cdot x\cdot 10^6= \textbf{MB}
   \end{aligned}
 \end{equation}
@@ -72,14 +70,14 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
   \hline
   \multicolumn{3}{|c|}{\textbf{MISSIONI}}\\
   \hline
-  Atributo & Tipo & Spazio(Byte) \\
+  Attributo & Tipo & Spazio(Byte) \\
   \hline
   codice & INTEGER & 4 \\
   dataFine & DATE & 7 \\
   obbiettivo & VARCHAR(100) & 100 \\
   dataInizio & DATE & 7 \\
   statoAttuale  & VARCHAR(30) & 30 \\
-  dataFine & VARCHAR(30) & 30 \\
+  resoconto & VARCHAR(30) & 30 \\
   \hline
 \end{tabular}
 \begin{equation}
@@ -89,23 +87,38 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
     &=(4+7+100+7+30+30)\cdot x\cdot 10^6= \textbf{MB}
   \end{aligned}
 \end{equation}
+\subsection{Risorsa_1}
+\begin{tabular}{|c|c|c|}
+  \hline
+  \multicolumn{3}{|c|}{\textbf{RISORSA_1}}\\
+  \hline
+  Attributo & Tipo & Spazio(Byte) \\
+  \hline
+  sensore & INTEGGER & 4 \\
+  missione & INTEGER & 4 \\
+  \hline
+\end{tabular}
+\begin{equation}
+  \begin{aligned}
+    D_{\text{risorsa_1}}&=(D_{\text{sensore}} + D_{\text{missione}}) \cdot N_{\text{risorse_1}}=\\
+    &=(4+4)\cdot x\cdot 10^6=x\cdot 49.6  \text{\textbf{MB}}\\
+  \end{aligned}
+\end{equation}
 \subsection{Report}
 \begin{tabular}{|c|c|c|}
   \hline
   \multicolumn{3}{|c|}{\textbf{REPORT}}\\
   \hline
-  Atributo & Tipo & Spazio(Byte) \\
+  Attributo & Tipo & Spazio(Byte) \\
   \hline
   stato & VARCHAR(30) & 30 \\
-  autore & VARCHAR(30) & 30\\
+  autore & INTEGER & 4\\
   \hline
 \end{tabular}
-
 \begin{equation}
   \begin{aligned}
-    D_{\text{report}} &=\\
-    &=(D_{\text{stato}}+D_{\text{autore}})\cdot N_{\text{report}}=\\
-    &=(30+30)\cdot x\cdot 10^6= \textbf{MB}
+    D_{\text{report}} &=(D_{\text{stato}}+D_{\text{autore}})\cdot N_{\text{report}}=\\
+    &=(30+4)\cdot x\cdot 10^6= \textbf{MB}
   \end{aligned}
 \end{equation}
 \subsection{Rilevazioni}
@@ -113,7 +126,7 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
   \hline
   \multicolumn{3}{|c|}{\textbf{RILEVAZIONI}}\\
   \hline
-  Atributo & Tipo & Spazio(Byte) \\
+  Attributo & Tipo & Spazio(Byte) \\
   \hline
   data & DATE & 7 \\
   ora & DATE &  7 \\
@@ -133,7 +146,7 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
   \hline
   \multicolumn{3}{|c|}{\textbf{ROBOT}}\\
   \hline
-  Atributo & Tipo & Spazio(Byte) \\
+  Attributo & Tipo & Spazio(Byte) \\
   \hline
   codice & INTEGER & 4\\
   tipologia & VARCHAR(30) & 30\\
@@ -141,8 +154,7 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
 \end{tabular}
 \begin{equation}
   \begin{aligned}
-    D_{\text{robot}} &=\\
-    &=(D_{\text{codice}}+D_{\text{tipologia}})\cdot N_{\text{robot}}=\\
+    D_{\text{robot}} &=(D_{\text{codice}}+D_{\text{tipologia}})\cdot N_{\text{robot}}=\\
     &=(4+30)\cdot x\cdot 10^6= \textbf{MB}
   \end{aligned}
 \end{equation}
@@ -151,7 +163,7 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
   \hline
   \multicolumn{3}{|c|}{\textbf{SENSORI}}\\
   \hline
-  Atributo & Tipo & Spazio(Byte) \\
+  Attributo & Tipo & Spazio(Byte) \\
   \hline
   ID & INTEGER & 4 \\
   stato & VARCHAR(30) & 30\\
@@ -170,8 +182,30 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
     &=(4+30+7+30+7+9+9+9)\cdot x\cdot 10^6= \textbf{MB}
   \end{aligned}
 \end{equation}
+\subsection{Risorsa_2}
+\begin{tabular}{|c|c|c|}
+  \hline
+  \multicolumn{3}{|c|}{\textbf{RISORSA_2}}\\
+  \hline
+  Attributo & Tipo & Spazio(Byte) \\
+  \hline
+  robot & INTEGGER & 4 \\
+  missione & INTEGER & 4 \\
+  \hline
+\end{tabular}
+\begin{equation}
+  \begin{aligned}
+    D_{\text{risorsa_2}}&=(D_{\text{robot}} + D_{\text{missione}}) \cdot N_{\text{risorse_2}}=\\
+    &=(4+4)\cdot x\cdot 10^6=x\cdot 49.6  \text{\textbf{MB}}\\
+  \end{aligned}
+\end{equation}
 \subsection{Gestione dello spazio e dell'affidabilità}
 Dalle stime fatte precedentemente possiamo stimare un volume di informazioni pari:
 \begin{equation}
   D_{\text{tot}}=X\\
 \end{equation}
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: "Tesina"
+%%% End:
