@@ -1,0 +1,25 @@
+\section{Gestione degli indici}
+\mint{sql}/ /
+%TODO: Da completare
+Gli indici sono struttura dati ordinata impiegata nel DBMS per la localizzazione di un specifico record andando ad velocizzare le operazioni di ricerca, sono 
+caratterizati da una data entry (record memorizato in un file indice) che può essere costituito:
+\begin{itemize}
+\item Intero record di dati
+\item Coppia costituita da una \texttt{chiave} e \texttt{rid}
+\item Coppia costituita da una \texttt{chiave} e \texttt{lista di rid}
+\end{itemize}
+Dove in \texttt{DBMS Oracle} va creare in maniera automati indici di tipo \texttt{B+Tree} per ogni chiave primaria di tutte le tabelle.
+\begin{description}
+\begin{minted}{sql}
+ CREATE INDEX INTERVENTI_CODICE ON INTERVENTI (codice);
+ CREATE INDEX REPORT_STATO ON REPORT (stato);
+ CREATE INDEX ANOMALIE_DATA_ORA ON ANOMALIE (data, ora);
+ CREATE INDEX RIVELAZIONI_DATA_ORA ON RIVELAZIONI (data, ora);
+ CREATE INDEX MISSIONI_CODICE ON MISSIONI (codice);
+\end{minted}
+\end{description}
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: "Tesina"
+%%% End:
