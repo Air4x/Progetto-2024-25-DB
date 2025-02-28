@@ -7,13 +7,13 @@
 - [X] Progettazione Concettuale
   - [X] schema E/R portante
   - [X] schema E/R finale
-- [ ] Progettazione Logica
-  - [ ] trasformazione schema E/R
-  - [ ] trasformazione in schema relazionale
+- [X] Progettazione Logica
+  - [X] trasformazione schema E/R
+  - [X] trasformazione in schema relazionale
 - [ ] Progettazione Fisica
-  - [ ] Dimensionamento dei dati
-  - [ ] Creazione del database
-  - [ ] Gestione degli indici
+  - [95%] Dimensionamento dei dati
+  - [X] Creazione del database
+  - [X] Gestione degli indici
   - [ ] Popolamento della base di dati
-- Operazioni
-- Discussione implementazione web-app
+- [ ] Operazioni
+- [ ] Discussione implementazione web-app
