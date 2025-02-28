@@ -1,0 +1,177 @@
+\section{Dimensionamento dei dati}
+% TODO:Completare inserendo in numero di tuple
+Per andare fare una stima sul volume che adranno ad occupare i vari dati in base allla loro tipologia, ci baseremo su:
+\begin{itemize}
+\item Tabelle/Schemi ottenute in fase di progettazione logica (sezione 3.2)
+\item Il numero di missioni previste dall'agenzia spaziale
+\end{itemize}
+\subsection{Anomalia}
+\begin{tabular}{|c|c|c|}
+  \hline
+  \multicolumn{3}{|c|}{\textbf{ANOMALIA}}\\
+  \hline
+  Attributo & Tipo & Spazio(Byte) \\
+  \hline
+  data & DATE & 7 \\
+  ora & DATE & 7 \\
+  causa & VARCHAR(30) & 30 \\
+  livello & INTEGGER & 4 \\
+  sensore & INTEGER & 4 \\
+  \hline
+\end{tabular}
+\begin{equation}
+  \begin{aligned}
+    D_{\text{anomalia}}&=(D_{\text{data}} + D_{\text{ora}} +D_{\text{causa}} +D_{\text{livello}} + D_{\text{sensore}}) \cdot N_{\text{anomalie}}=\\
+    &=(7+7+30+4+4)\cdot x\cdot 10^6=x\cdot 49.6  \text{\textbf{MB}}\\
+  \end{aligned}
+\end{equation}
+\subsection{Interventi}
+\begin{tabular}{ |c|c|c|}
+  \hline
+  \multicolumn{3}{|c|}{\textbf{INTERVENTI}} \\
+  \hline
+  Atributo & Tipo & Spazio(Byte) \\
+  \hline
+  codice & INTEGER & 4 \\
+  esito & VARCHAR(20) & 20 \\
+  calibrazione & VARCHAR(20) & 20 \\
+  riparazione & VARCHAR(20) & 20 \\
+  sostituzione & VARCHAR(20) & 20 \\
+  dataPrefissata & DATE & 7 \\
+  \hline
+\end{tabular}
+\begin{equation}
+  \begin{aligned}
+    D_{\text{interventi}} &=\\
+    &=(D_{\text{codice}} + D_{\text{esito}} +D_{\text{calibrazione}} +D_{\text{riparazione}} + D_{\text{sostituzione}} + D_{text{dataPrefissata}}) \cdot  Nint =\\
+    &=(4+20+20+20+20+7)\cdot x\cdot 10^6= \textbf{MB}
+  \end{aligned}
+\end{equation}
+\subsection{Membri}
+\begin{tabular}{ |c|c|c|}
+  \hline
+  \multicolumn{3}{|c|}{\textbf{MEMBRI}}\\
+  \hline
+  Atributo & Tipo & Spazio(Byte) \\
+  \hline
+  codice & INTEGER & 4 \\
+  nome & VARCHAR(30) & 30 \\
+  cognome & VARCHAR(30) & 30 \\
+  ruolo & VARCHAR(30) & 30\\
+  \hline
+\end{tabular}
+\begin{equation}
+  \begin{aligned}
+    D_{\text{membri}} &=\\
+    &=(D_{\text{codice}} + D_{\text{nome}} +D_{\text{cognome}} +D_{\text{ruolo}}) \cdot  N_{\text{membri}} =\\
+    &=(4+30+30+30) \cdot x\cdot 10^6= \textbf{MB}
+  \end{aligned}
+\end{equation}
+\subsection{Missioni}
+\begin{tabular}{ |c|c|c|}
+  \hline
+  \multicolumn{3}{|c|}{\textbf{MISSIONI}}\\
+  \hline
+  Atributo & Tipo & Spazio(Byte) \\
+  \hline
+  codice & INTEGER & 4 \\
+  dataFine & DATE & 7 \\
+  obbiettivo & VARCHAR(100) & 100 \\
+  dataInizio & DATE & 7 \\
+  statoAttuale  & VARCHAR(30) & 30 \\
+  dataFine & VARCHAR(30) & 30 \\
+  \hline
+\end{tabular}
+\begin{equation}
+  \begin{aligned}
+    &D_{\text{missioni}} =\\
+    &=(D_{\text{codice}}+D_{\text{dataFine}}+D_{\text{obbietivo}}+D_{\text{dataInizio}}+D_{\text{statoA}}+D_{\text{dataFine}})\cdot N_{\text{miss}}=\\
+    &=(4+7+100+7+30+30)\cdot x\cdot 10^6= \textbf{MB}
+  \end{aligned}
+\end{equation}
+\subsection{Report}
+\begin{tabular}{|c|c|c|}
+  \hline
+  \multicolumn{3}{|c|}{\textbf{REPORT}}\\
+  \hline
+  Atributo & Tipo & Spazio(Byte) \\
+  \hline
+  stato & VARCHAR(30) & 30 \\
+  autore & VARCHAR(30) & 30\\
+  \hline
+\end{tabular}
+
+\begin{equation}
+  \begin{aligned}
+    D_{\text{report}} &=\\
+    &=(D_{\text{stato}}+D_{\text{autore}})\cdot N_{\text{report}}=\\
+    &=(30+30)\cdot x\cdot 10^6= \textbf{MB}
+  \end{aligned}
+\end{equation}
+\subsection{Rilevazioni}
+\begin{tabular}{|c|c|c|}
+  \hline
+  \multicolumn{3}{|c|}{\textbf{RILEVAZIONI}}\\
+  \hline
+  Atributo & Tipo & Spazio(Byte) \\
+  \hline
+  data & DATE & 7 \\
+  ora & DATE &  7 \\
+  valore & INTEGER & 4 \\
+  sensore & INTEGER & 4 \\
+  \hline
+\end{tabular}
+\begin{equation}
+  \begin{aligned}
+    D_{\text{rivelazione}} &=\\
+    &=(D_{\text{data}}+D_{\text{ora}}+D_{\text{valore}}+D_{\text{sensore}})\cdot N_{\text{rivelazione}}=\\
+    &=(7+7+4+4+)\cdot x\cdot 10^6= \textbf{MB}
+  \end{aligned}
+\end{equation}
+\subsection{Robot}
+\begin{tabular}{ |c|c|c|}
+  \hline
+  \multicolumn{3}{|c|}{\textbf{ROBOT}}\\
+  \hline
+  Atributo & Tipo & Spazio(Byte) \\
+  \hline
+  codice & INTEGER & 4\\
+  tipologia & VARCHAR(30) & 30\\
+  \hline
+\end{tabular}
+\begin{equation}
+  \begin{aligned}
+    D_{\text{robot}} &=\\
+    &=(D_{\text{codice}}+D_{\text{tipologia}})\cdot N_{\text{robot}}=\\
+    &=(4+30)\cdot x\cdot 10^6= \textbf{MB}
+  \end{aligned}
+\end{equation}
+\subsection{Sensori}
+\begin{tabular}{ |c|c|c|}
+  \hline
+  \multicolumn{3}{|c|}{\textbf{SENSORI}}\\
+  \hline
+  Atributo & Tipo & Spazio(Byte) \\
+  \hline
+  ID & INTEGER & 4 \\
+  stato & VARCHAR(30) & 30\\
+  dataInstallazione & DATE & 7\\
+  tipo & VARCHAR(30) & 30\\
+  ultimoControllo & DATE & 7\\
+  latitudine & DECIMAL(10,4) & 9\\
+  altitudine & DECIMAL(10,4) & 9\\
+  longitudine & DECIMAL(10,4) & 9\\
+  \hline
+\end{tabular}
+\begin{equation}
+  \begin{aligned}
+    D_{\text{sensore}} &=\\
+    &=(D_{\text{id}}+D_{\text{stato}}+D_{\text{dataInst}}+D_{\text{ultCont}}+D_{\text{lat}}+D_{\text{alt}}+D_{\text{long}})\cdot N_{\text{sen}}=\\
+    &=(4+30+7+30+7+9+9+9)\cdot x\cdot 10^6= \textbf{MB}
+  \end{aligned}
+\end{equation}
+\subsection{Gestione dello spazio e dell'affidabilità}
+Dalle stime fatte precedentemente possiamo stimare un volume di informazioni pari:
+\begin{equation}
+  D_{\text{tot}}=X\\
+\end{equation}
