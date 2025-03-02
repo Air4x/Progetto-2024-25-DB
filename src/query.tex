@@ -1,0 +1,58 @@
+\section{Query}
+\subsection{Recupero anomalie gravi}
+Selezionare tutte le anomalie con un livello maggiore o uguale a una certa soglia (es. 4), indicando il sensore coinvolto e la data.
+\begin{description}
+\begin{minted}{sql}
+SELECT SENSORI.ID, ANOMALIE.LIVELLO
+FROM SENSORI JOIN ANOMALIE ON SENSORI.ID = ANOMALIE.SENSORE
+WHERE ANOMALIE.LIVELLO >= 4
+GROUP BY SENSORI.ID,ANOMALIE.LIVELLO;
+\end{minted}
+\subsection{Monitoraggio degli interventi pianificati}
+Recuperare tutti gli interventi con stato "Pianificato" e la data prevista per l'esecuzione.
+\begin{minted}{sql}
+SELECT INTERVENTI.CODICE, INTERVENTI.ESITO
+FROM INTERVENTI
+WHERE INTERVENTI.ESITO = 'Pianificato'
+GROUP BY INTERVENTI.CODICE, INTERVENTI.ESITO;
+\end{minted}
+\subsection{Lista delle missioni attive con risorse assegnate}
+Visualizzare tutte le missioni con stato "Attiva", mostrando i robot e i sensori associati.
+\begin{minted}{sql}
+SELECT MISSIONI.STATOATTUALE, RISORSA_1.ROBOT, RISORSA_2.SENSORE
+FROM MISSIONI JOIN RISORSA_1 ON MISSIONI.CODICE = RISORSA_1.MISSIONE JOIN RISORSA_2 ON RISORSA_1.MISSIONE = RISORSA_2.MISSIONE  
+WHERE MISSIONI.STATOATTUALE = 'Attiva'
+GROUP BY MISSIONI.STATOATTUALE, RISORSA_1.ROBOT, RISORSA_2.SENSORE;
+\end{minted}
+\subsection{Sensori con più anomalie registrate}
+Contare il numero di anomalie per ciascun sensore e restituire quelli con il maggior numero di problemi.
+\begin{minted}{sql}
+CREATE VIEW ANOMALIE_SENSORI AS
+SELECT SENSORI.ID AS SENSORI,COUNT(ANOMALIE.SENSORE) AS NUM_ANOMALIE
+FROM SENSORI JOIN ANOMALIE ON SENSORI.ID = ANOMALIE.SENSORE
+GROUP BY SENSORI.ID;
+
+SELECT SENSORI,NUM_ANOMALIE
+FROM ANOMALIE_SENSORI
+WHERE NUM_ANOMALIE=(
+    SELECT MAX(NUM_ANOMALIE)
+    FROM ANOMALIE_SENSORI
+);
+\end{minted}
+\subsection{Ultime rilevazioni per ogni sensore}
+Ottenere l'ultima misurazione registrata per ogni sensore.
+\begin{minted}{sql}
+SELECT R1.SENSORE AS SENSORE,R1.VALORE,R1.DATA
+FROM RILEVAZIONI R1
+WHERE (DATA,ORA) = (
+    SELECT MAX(R2.DATA),MAX(R2.ORA)
+    FROM RILEVAZIONI R2
+    WHERE R1.SENSORE = R2.SENSORE
+    RAISE_APPLICATION_ERROR(-20001,'ERRORE: Sensore non trovato');
+);
+\end{minted}
+\end{description}
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: "Tesina"
+%%% End:

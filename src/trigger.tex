@@ -1,0 +1,67 @@
+\section{Trigger}
+\begin{description}
+\subsection{Trigger per aggiornare automaticamente la data dell'ultimo controllo di un sensore}
+Quando viene registrata una nuova rilevazione per un sensore, aggiornare il campo ULTIMOCONTROLLO.
+\begin{minted}{sql}
+CREATE OR REPLACE TRIGGER UPDATE_ULTIMO_CONTROLLO
+AFTER INSERT ON RIVELAZIONI
+FOR EACH ROW
+BEGIN
+    UPDATE SENSORI
+    SET ULTIMOCONTROLLO = :NEW.DATA
+    WHERE ID = :NEW.SENSORE
+END;
+\end{minted}
+\subsection{Trigger per impedire l'inserimento di anomalie con data futura}
+Controllare che la data delle anomalie non sia successiva alla data odierna.
+\begin{minted}{sql}
+CREATE OR REPLACE TRIGGER ANOMALIE_FUTURE
+BEFORE INSERT ON ANOMALIE
+FOR EACH ROW
+DECLARE 
+     DATA_FUTURA EXCEPTION;
+BEGIN 
+IF :NEW.DATA > SYSDATE THEN
+        RAISE DATA_FUTURA;
+    END IF;    
+EXCEPTION 
+        WHEN DATA_FUTURA THEN 
+        RAISE_APPLICATION_ERROR(-20002,'DATA INSERITA NON POSSIBILE');
+END;
+\end{minted}
+\subsection{Trigger per aggiornare lo stato di un sensore in caso di anomalie gravi}
+e un'anomalia ha livello ≥ 4, modificare automaticamente lo stato del sensore in "Guasto" o "Manutenzione".
+\begin{minted}{sql}
+CREATE OR REPLACE TRIGGER STATO_ANOMALI
+AFTER INSERT ON ANOMALIE
+FOR EACH ROW
+BEGIN
+    IF :NEW.LIVELLO >=4 THEN
+    UPDATE SENSORI
+    SET STATO = 'GUASTO'
+    WHERE ID = :NEW.SENSORE;
+    END IF;
+END;
+\end{minted}
+\subsection{Trigger per impedire la cancellazione di membri che hanno scritto report}
+Evitare la rimozione di un membro se ha creato almeno un report.
+\begin{minted}{sql}
+CREATE OR REPLACE TRIGGER NO_DELETE_MEMBER
+BEFORE DELETE ON MEMBRI
+FOR EACH ROW
+DECLARE
+    COUNTER NUMBER;
+BEGIN
+    SELECT COUNT(*) INTO COUNTER
+    FROM REPORT
+    WHERE AUTORE = :OLD.CODICE;
+    IF COUNTER > 0 THEN
+        RAISE_APPLICATION_ERROR(-20004, 'ERRORE: Impossibile eliminare il membro perché ha scritto uno o più report.');
+    END IF;
+END;
+\end{minted}
+\end{description}
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: "Tesina"
+%%% End:

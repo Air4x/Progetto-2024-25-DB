@@ -1,0 +1,112 @@
+\section{Popolamento della base di dati}
+%TODO: In caso di cambiamentoi nel popolamento ricardare di aggiornare il dimensionamento
+In tale sezioni ci occuperemo del popolamento della base dati con l'ausilio di Chatgip per la creazione di dati fittizi con il fini di testare la nostra base dati. In otteniamo:
+\begin{itemize}
+\item 5 Sensori
+\item 6 Anomalie
+\item 5 Interventi
+\item 5 Membri
+\item 5 Report
+\item 5 Missioni
+\item 5 Rilevazioni
+\item 5 Robot
+\item 5 Risorsa_1
+\item 6 Risorsa_2
+\end{itemize}
+\subsection{\texttt{Sensori}}
+\begin{minted}{sql}
+INSERT INTO SENSORI (STATO, DATAINSTALLAZIONE, TIPO, ULTIMOCONTROLLO, LATITUDINE, LONGITUDINE, ALTITUDINE) VALUES
+('Attivo', TO_DATE('2023-01-15', 'YYYY-MM-DD'), 'Temperatura', TO_DATE('2024-02-01', 'YYYY-MM-DD'), 45.1234, 12.5678, 100.5),
+('Guasto', TO_DATE('2022-06-20', 'YYYY-MM-DD'), 'Pressione', TO_DATE('2024-01-10', 'YYYY-MM-DD'), 44.8765, 13.6789, 200.3),
+('Attivo', TO_DATE('2023-03-10', 'YYYY-MM-DD'), 'Umidità', TO_DATE('2024-02-15', 'YYYY-MM-DD'), 46.2345, 11.3456, 150.0),
+('Manutenzione', TO_DATE('2023-05-22', 'YYYY-MM-DD'), 'Temperatura', TO_DATE('2024-02-28', 'YYYY-MM-DD'), 45.6789, 12.4567, 180.7),
+('Attivo', TO_DATE('2022-11-05', 'YYYY-MM-DD'), 'Pressione', TO_DATE('2024-02-10', 'YYYY-MM-DD'), 46.7890, 13.7890, 220.1);
+\end{minted}
+\subsection{\texttt{Anomalie}}
+\begin{minted}{sql}
+INSERT INTO ANOMALIE (DATA, ORA, CAUSA, LIVELLO, SENSORE) VALUES 
+(TO_DATE('2024-02-10', 'YYYY-MM-DD'),'10:30:00', 'Sbalzo di temperatura', 3, 1),
+(TO_DATE('2024-01-25', 'YYYY-MM-DD'),'08:15:00', 'Guasto elettronico', 5, 2),
+(TO_DATE('2024-02-20', 'YYYY-MM-DD'),'14:45:00', 'Errore di calibrazione', 2, 2),
+(TO_DATE('2024-02-22', 'YYYY-MM-DD'),'18:30:00', 'Sbalzo di temperatura', 4, 1),
+(TO_DATE('2024-02-28', 'YYYY-MM-DD'),'20:00:00','Sensore non risponde', 3, 1),
+(TO_DATE('2024-01-09', 'YYYY-MM-DD'),'10:00:00', 'Danno Hardware', 2, 3);
+\end{minted}
+\subsection{\texttt{Interventi}}
+\begin{minted}{sql}
+INSERT INTO INTERVENTI (ESITO, CALIBRAZIONE, RIPARAZIONE, SOSTITUZIONE, DATAPREFISSATA) VALUES 
+('Completato', 'Sì', 'No', 'No', TO_DATE('2024-02-20', 'YYYY-MM-DD')),
+('In corso', 'No', 'Sì', 'No', TO_DATE('2024-03-05', 'YYYY-MM-DD')),
+('Pianificato', 'No', 'No', 'Sì', TO_DATE('2024-03-15', 'YYYY-MM-DD')),
+('Completato', 'Sì', 'Sì', 'No', TO_DATE('2024-02-25', 'YYYY-MM-DD')),
+('Annullato', 'No', 'No', 'No', TO_DATE('2024-04-01', 'YYYY-MM-DD')),
+\end{minted}
+\subsection{\texttt{Membri}}
+\begin{minted}{sql}
+INSERT INTO MEMBRI (NOME, COGNOME, RUOLO) VALUES
+('Mario', 'Rossi', 'Tecnico'),
+('Laura', 'Bianchi', 'Supervisore'),
+('Giovanni', 'Verdi', 'Operatore'),
+('Elena', 'Neri', 'Analista'),
+('Paolo', 'Moretti', 'Ingegnere'),
+\end{minted}
+\subsection{\texttt{Report}}
+\begin{minted}{sql}
+INSERT INTO REPORT (STATO, AUTORE) VALUES 
+('Confermato', 1),
+('In revisione', 2),
+('Approvato', 3),
+('Respinto', 4),
+('In attesa', 5);
+\end{minted}
+\subsection{\texttt{Missioni}}
+\begin{minted}{sql}
+INSERT INTO MISSIONI (DATAFINE, OBBIETTIVO, DATAINIZIO, STATOATTUALE, RESOCONTO) VALUES 
+(TO_DATE('2024-03-10', 'YYYY-MM-DD'), 'Manutenzione sensori', TO_DATE('2024-02-25', 'YYYY-MM-DD'), 'Attiva', 'Confermato'),
+(TO_DATE('2024-04-01', 'YYYY-MM-DD'), 'Installazione nuovi dispositivi', TO_DATE('2024-03-15', 'YYYY-MM-DD'), 'Pianificata', 'In revisione'),
+(TO_DATE('2024-05-12', 'YYYY-MM-DD'), 'Riparazione anomalie', TO_DATE('2024-04-20', 'YYYY-MM-DD'), 'In corso', 'Approvato'),
+(TO_DATE('2024-06-10', 'YYYY-MM-DD'), 'Test nuovi sensori', TO_DATE('2024-05-01', 'YYYY-MM-DD'), 'Pianificata', 'In attesa'),
+(TO_DATE('2024-07-05', 'YYYY-MM-DD'), 'Upgrade firmware', TO_DATE('2024-06-20', 'YYYY-MM-DD'), 'Attiva', 'Confermato');
+\end{minted}
+\subsection{\texttt{Rilevazioni}}
+\begin{minted}{sql}
+INSERT INTO RILEVAZIONI (DATA, ORA, VALORE, SENSORE) VALUES 
+(TO_DATE('2024-02-12', 'YYYY-MM-DD'),'12:00:00', 25, 1),
+(TO_DATE('2024-02-12', 'YYYY-MM-DD'),'12:30:00', 27, 1),
+(TO_DATE('2024-02-14', 'YYYY-MM-DD'),'09:45:00', 30, 4),
+(TO_DATE('2024-02-15', 'YYYY-MM-DD'),'16:20:00', 22, 3),
+(TO_DATE('2024-07-05', 'YYYY-MM-DD'),'19:30:00', 22, 5);
+\end{minted}
+\subsection{\texttt{Robot}}
+\begin{minted}{sql}
+INSERT INTO ROBOT (TIPOLOGIA) VALUES ('Ricognizione'),
+('Riparazione'),
+('Supporto logistico'),
+('Monitoraggio'),
+('Emergenza');
+\end{minted}
+\subsection{\texttt{Risorsa 1}}
+\begin{minted}{sql}
+INSERT INTO RISORSA_1 (ROBOT, MISSIONE) VALUES 
+(1, 1),
+(2, 2),
+(3, 4),
+(2, 3),
+(4, 5);
+\end{minted}
+\subsection{\texttt{Risorsa 2}}
+\begin{minted}{sql}
+INSERT INTO RISORSA_2 (SENSORE, MISSIONE) VALUES 
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 5),
+(1, 4),
+(2, 1);
+\end{minted}
+
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: "Tesina"
+%%% End:

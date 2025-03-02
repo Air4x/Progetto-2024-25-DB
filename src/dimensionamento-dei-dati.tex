@@ -5,6 +5,7 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
 \item Tabelle/Schemi ottenute in fase di progettazione logica (sezione 3.2)
 \item Il numero di missioni previste dall'agenzia spaziale
 \end{itemize}
+In questo caso ci baseremo per sul popolamento fatto nella sezione 4.4 per fare il dimensionamento.
 \subsection{Anomalia}
 \begin{tabular}{|c|c|c|}
   \hline
@@ -13,7 +14,7 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
   Attributo & Tipo & Spazio(Byte) \\
   \hline
   data & DATE & 7 \\
-  ora & DATE & 7 \\
+  ora & VARCHAR(8)  & 8 \\
   causa & VARCHAR(30) & 30 \\
   livello & INTEGGER & 4 \\
   sensore & INTEGER & 4 \\
@@ -22,7 +23,7 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
 \begin{equation}
   \begin{aligned}
     D_{\text{anomalia}}&=(D_{\text{data}} + D_{\text{ora}} +D_{\text{causa}} +D_{\text{livello}} + D_{\text{sensore}}) \cdot N_{\text{anomalie}}=\\
-    &=(7+7+30+4+4)\cdot x\cdot 10^6=x\cdot 49.6  \text{\textbf{MB}}\\
+    &=(7+8+30+4+4)\cdot 6 = 318\text{\textbf{B}}\\
   \end{aligned}
 \end{equation}
 \subsection{Interventi}
@@ -43,7 +44,7 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
 \begin{equation}
   \begin{aligned}
     D_{\text{interventi}} &=(D_{\text{codice}} + D_{\text{esito}} +D_{\text{calibrazione}} +D_{\text{riparazione}} + D_{\text{sostituzione}} + D_{text{dataPrefissata}}) \cdot  Nint =\\
-    &=(4+20+20+20+20+7)\cdot x\cdot 10^6= \textbf{MB}
+    &=(4+20+20+20+20+7)\cdot 5 = 455\textbf{B}
   \end{aligned}
 \end{equation}
 \subsection{Membri}
@@ -62,7 +63,7 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
 \begin{equation}
   \begin{aligned}
     D_{\text{membri}} &=(D_{\text{codice}} + D_{\text{nome}} +D_{\text{cognome}} +D_{\text{ruolo}}) \cdot  N_{\text{membri}} =\\
-    &=(4+30+30+30) \cdot x\cdot 10^6= \textbf{MB}
+    &=(4+30+30+30) \cdot 5 = 470\textbf{B}
   \end{aligned}
 \end{equation}
 \subsection{Missioni}
@@ -84,7 +85,7 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
   \begin{aligned}
     &D_{\text{missioni}} =\\
     &=(D_{\text{codice}}+D_{\text{dataFine}}+D_{\text{obbietivo}}+D_{\text{dataInizio}}+D_{\text{statoA}}+D_{\text{dataFine}})\cdot N_{\text{miss}}=\\
-    &=(4+7+100+7+30+30)\cdot x\cdot 10^6= \textbf{MB}
+    &=(4+7+100+7+30+30)\cdot 5 = 890\textbf{B}
   \end{aligned}
 \end{equation}
 \subsection{Risorsa_1}
@@ -101,7 +102,7 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
 \begin{equation}
   \begin{aligned}
     D_{\text{risorsa_1}}&=(D_{\text{sensore}} + D_{\text{missione}}) \cdot N_{\text{risorse_1}}=\\
-    &=(4+4)\cdot x\cdot 10^6=x\cdot 49.6  \text{\textbf{MB}}\\
+    &=(4+4)\cdot 5 = 40\text{\textbf{B}}\\
   \end{aligned}
 \end{equation}
 \subsection{Report}
@@ -118,7 +119,7 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
 \begin{equation}
   \begin{aligned}
     D_{\text{report}} &=(D_{\text{stato}}+D_{\text{autore}})\cdot N_{\text{report}}=\\
-    &=(30+4)\cdot x\cdot 10^6= \textbf{MB}
+    &=(30+4)\cdot 5 = 170\textbf{B}
   \end{aligned}
 \end{equation}
 \subsection{Rilevazioni}
@@ -129,7 +130,7 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
   Attributo & Tipo & Spazio(Byte) \\
   \hline
   data & DATE & 7 \\
-  ora & DATE &  7 \\
+  ora & VARCHAR(8)  & 8\\
   valore & INTEGER & 4 \\
   sensore & INTEGER & 4 \\
   \hline
@@ -138,7 +139,7 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
   \begin{aligned}
     D_{\text{rivelazione}} &=\\
     &=(D_{\text{data}}+D_{\text{ora}}+D_{\text{valore}}+D_{\text{sensore}})\cdot N_{\text{rivelazione}}=\\
-    &=(7+7+4+4+)\cdot x\cdot 10^6= \textbf{MB}
+    &=(7+8+4+4)\cdot 5 = 115\textbf{B}
   \end{aligned}
 \end{equation}
 \subsection{Robot}
@@ -155,7 +156,7 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
 \begin{equation}
   \begin{aligned}
     D_{\text{robot}} &=(D_{\text{codice}}+D_{\text{tipologia}})\cdot N_{\text{robot}}=\\
-    &=(4+30)\cdot x\cdot 10^6= \textbf{MB}
+    &=(4+30)\cdot 5 = 170\textbf{B}
   \end{aligned}
 \end{equation}
 \subsection{Sensori}
@@ -179,7 +180,7 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
   \begin{aligned}
     D_{\text{sensore}} &=\\
     &=(D_{\text{id}}+D_{\text{stato}}+D_{\text{dataInst}}+D_{\text{ultCont}}+D_{\text{lat}}+D_{\text{alt}}+D_{\text{long}})\cdot N_{\text{sen}}=\\
-    &=(4+30+7+30+7+9+9+9)\cdot x\cdot 10^6= \textbf{MB}
+    &=(4+30+7+30+7+9+9+9)\cdot 5 = 525\textbf{B}
   \end{aligned}
 \end{equation}
 \subsection{Risorsa_2}
@@ -196,13 +197,13 @@ Per andare fare una stima sul volume che adranno ad occupare i vari dati in base
 \begin{equation}
   \begin{aligned}
     D_{\text{risorsa_2}}&=(D_{\text{robot}} + D_{\text{missione}}) \cdot N_{\text{risorse_2}}=\\
-    &=(4+4)\cdot x\cdot 10^6=x\cdot 49.6  \text{\textbf{MB}}\\
+    &=(4+4)\cdot 6 = 48\text{\textbf{B}}\\
   \end{aligned}
 \end{equation}
 \subsection{Gestione dello spazio e dell'affidabilità}
 Dalle stime fatte precedentemente possiamo stimare un volume di informazioni pari:
 \begin{equation}
-  D_{\text{tot}}=X\\
+  D_{\text{tot}}=(318+455+470+890+40+170+115+170+525+48)= 3201\text{\textbf{B}}\\
 \end{equation}
 
 %%% Local Variables:

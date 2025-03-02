@@ -1,0 +1,15 @@
+\chapter{Operazioni}
+Per l'implementazione di funzionalità che la base dati deve offrire agli utento aviene mediante l'utilizzo di:
+\begin{itemize}
+\item Viste, è un ttabella descitta in termini di altre tabelle, un \textbf{relazione virtuale}, dove sue tuple non sono memorizzate nella base dati ma ricavabili medianti interroigazioni, deliniando un iterfaccia messa a disposizione di utenti e applicazioni. La sua utilita si trova nei casi in cui si debbano vare tabelle che mettono in relazione campi di tabelle “distanti” nel modello logico.
+\item Query, per verificare il corretto funzionamento della base di dati.
+\item Trigger, sono procedure che si attivano quando vengono esiguite ogni volta che si fa un operazione stabilitasu un oggetto specifico della base dati.
+\end{itemize}
+\input{src/viste}
+\input{src/query}
+\input{src/trigger}
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: "Tesina"
+%%% End:
