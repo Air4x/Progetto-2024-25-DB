@@ -1,5 +1,4 @@
 \section{Trigger}
-\begin{description}
 \subsection{Trigger per aggiornare automaticamente la data dell'ultimo controllo di un sensore}
 Quando viene registrata una nuova rilevazione per un sensore, aggiornare il campo ULTIMOCONTROLLO.
 \begin{minted}{sql}
@@ -22,11 +21,11 @@ DECLARE
      DATA_FUTURA EXCEPTION;
 BEGIN 
 IF :NEW.DATA > SYSDATE THEN
-        RAISE DATA_FUTURA;
+        RAISE DATA-FUTURA;
     END IF;    
 EXCEPTION 
-        WHEN DATA_FUTURA THEN 
-        RAISE_APPLICATION_ERROR(-20002,'DATA INSERITA NON POSSIBILE');
+        WHEN DATA-FUTURA THEN 
+        RAISE_APPLICATIONERROR(-20002,'DATA INSERITA NON POSSIBILE');
 END;
 \end{minted}
 \subsection{Trigger per aggiornare lo stato di un sensore in caso di anomalie gravi}
@@ -45,7 +44,7 @@ END;
 \end{minted}
 \subsection{Trigger per impedire la cancellazione di membri che hanno scritto report}
 Evitare la rimozione di un membro se ha creato almeno un report.
-\begin{minted}{sql}
+\begin{minted}[breaklines]{sql}
 CREATE OR REPLACE TRIGGER NO_DELETE_MEMBER
 BEFORE DELETE ON MEMBRI
 FOR EACH ROW
@@ -60,7 +59,6 @@ BEGIN
     END IF;
 END;
 \end{minted}
-\end{description}
 %%% Local Variables:
 %%% mode: LaTeX
 %%% TeX-master: "Tesina"

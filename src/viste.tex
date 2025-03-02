@@ -1,6 +1,5 @@
 \section{Viste}
-\begin{description}
-\item{Vista dei sensori attivi con ultima rilevazione}
+\subsection{Vista dei sensori attivi con ultima rilevazione}
 Creare una vista che unisca le informazioni sui sensori attivi con la loro ultima rilevazione registrata.
 \begin{minted}{sql}
 CREATE VIEW SENSORI_ATTIVI_RILEVAZIONI AS
@@ -12,38 +11,39 @@ WHERE SENSORI.STATO='Attivo' AND RILEVAZIONI.DATA = (
     WHERE SENSORI.ID=RILEVAZIONI.SENSORE
 );
 \end{minted}
-\item{Vista degli interventi completati e il loro esito}
+\subsection{Vista degli interventi completati e il loro esito}
 Mostrare tutti gli interventi completati con dettagli su calibrazione, riparazione e sostituzione.
-\begin{minted}{sql}
-CREATE VIEW INTERVENTI_COMPLETATI AS
-SELECT INTERVENTI.CODICE AS INTERVENTI,INTERVENTI.ESITO,INTERVENTI.CALIBRAZIONE,INTERVENTI.RIPARAZIONE,INTERVENTI.SOSTITUZIONE
+\begin{minted}[breaklines]{sql}
+CREATE VIEW INTERVENTI-COMPLETATI AS
+SELECT INTERVENTI.CODICE AS INTERVENTI,INTERVENTI.ESITO,INTERVENTI.CALIBRAZIONE,
+->INTERVENTI.RIPARAZIONE,INTERVENTI.SOSTITUZIONE
 FROM INTERVENTI
 WHERE INTERVENTI.ESITO = 'Completato';
 \end{minted}
-\item{Vista dei membri e dei report creati}
+\subsection{Vista dei membri e dei report creati}
 Unire la tabella MEMBRI con REPORT per ottenere un elenco dei membri che hanno scritto report e il loro stato.
 \begin{minted}{sql}
-CREATE VIEW MEMBRI_REPORT AS
+CREATE VIEW MEMBR_REPORT AS
 SELECT MEMBRI.CODICE AS MEMBRO_CODE, REPORT.STATO AS STATO_REPORT
 FROM MEMBRI JOIN REPORT ON MEMBRI.CODICE = REPORT.AUTORE;
 \end{minted}
-\item{Vista delle missioni con i robot assegnati}
-Creare una vista che visualizzi le missioni attive e i robot assegnati tramite RISORSA_1.
+\subsection{Vista delle missioni con i robot assegnati}
+Creare una vista che visualizzi le missioni attive e i robot assegnati tramite RISORSA\_1.
 \begin{minted}{sql}
-CREATE VIEW MISSIONI_ROBOT AS
+CREATE VIEW MISSIONI-ROBOT AS
 SELECT MISSIONI.CODICE AS MISSIONI, RISORSA_1.ROBOT
 FROM MISSIONI JOIN RISORSA_1 ON MISSIONI.CODICE = RISORSA_1.MISSIONE
 WHERE MISSIONI.STATOATTUALE = 'Attiva'; 
 \end{minted}
-\item{Vista delle anomalie recenti}
+\subsection{Vista delle anomalie recenti}
 Mostrare tutte le anomalie registrate nell’ultimo mese con i dettagli del sensore coinvolto.
-\begin{minted}{sql}
+\begin{minted}[breaklines]{sql}
 CREATE VIEW ANOMALIE_RECENTI AS
 SELECT SENSORI.ID AS SENSORI, ANOMALIE.DATA AS DATA_ANOMALIA,SENSORI.LATITUDINE ,SENSORI.LONGITUDINE,SENSORI.ALTITUDINE
 FROM SENSORI JOIN ANOMALIE ON SENSORI.ID = ANOMALIE.SENSORE
 WHERE TO_DATE(ANOMALIE.DATA, 'YYYY-MM-DD') >= SYSDATE - 30
 \end{minted}
-\end{description}
+
 %%% Local Variables:
 %%% mode: LaTeX
 %%% TeX-master: "Tesina"

@@ -22,7 +22,7 @@ In questo caso ci baseremo per sul popolamento fatto nella sezione 4.4 per fare 
 \end{tabular}
 \begin{equation}
   \begin{aligned}
-    D_{\text{anomalia}}&=(D_{\text{data}} + D_{\text{ora}} +D_{\text{causa}} +D_{\text{livello}} + D_{\text{sensore}}) \cdot N_{\text{anomalie}}=\\
+    D{\text{\textsubscript{anomalia}}}&=(D{\text{\textsubscript{data}}} + D{\text{\textsubscript{ora}}} +D{\text{\textsubscript{causa}}} +D{\text{\textsubscript{livello}}} + D{\text{\textsubscript{sensore}}}) \cdot N{\text{\textsubscript{anomalie}}}=\\
     &=(7+8+30+4+4)\cdot 6 = 318\text{\textbf{B}}\\
   \end{aligned}
 \end{equation}
@@ -43,7 +43,7 @@ In questo caso ci baseremo per sul popolamento fatto nella sezione 4.4 per fare 
 \end{tabular}
 \begin{equation}
   \begin{aligned}
-    D_{\text{interventi}} &=(D_{\text{codice}} + D_{\text{esito}} +D_{\text{calibrazione}} +D_{\text{riparazione}} + D_{\text{sostituzione}} + D_{text{dataPrefissata}}) \cdot  Nint =\\
+    D{\text{\textsubscript{interventi}}} &=(D{\text{\textsubscript{codice}}} + D{\text{\textsubscript{esito}}} +D{\text{\textsubscript{calibrazione}}} +D{\text{\textsubscript{riparazione}}} + D{\text{\textsubscript{sostituzione}}} + D{\text{\textsubscript{dataPrefissata}}}) \cdot  N{\text{\textsubscript{int}}} =\\
     &=(4+20+20+20+20+7)\cdot 5 = 455\textbf{B}
   \end{aligned}
 \end{equation}
@@ -62,7 +62,7 @@ In questo caso ci baseremo per sul popolamento fatto nella sezione 4.4 per fare 
 \end{tabular}
 \begin{equation}
   \begin{aligned}
-    D_{\text{membri}} &=(D_{\text{codice}} + D_{\text{nome}} +D_{\text{cognome}} +D_{\text{ruolo}}) \cdot  N_{\text{membri}} =\\
+    D{\text{\textsubscript{membri}}} &=(D{\text{\textsubscript{codice}}} + D{\text{\textsubscript{nome}}} +D{\text{\textsubscript{cognome}}} +D{\text{\textsubscript{ruolo}}}) \cdot  N{\text{\textsubscript{membri}}} =\\
     &=(4+30+30+30) \cdot 5 = 470\textbf{B}
   \end{aligned}
 \end{equation}
@@ -83,8 +83,8 @@ In questo caso ci baseremo per sul popolamento fatto nella sezione 4.4 per fare 
 \end{tabular}
 \begin{equation}
   \begin{aligned}
-    &D_{\text{missioni}} =\\
-    &=(D_{\text{codice}}+D_{\text{dataFine}}+D_{\text{obbietivo}}+D_{\text{dataInizio}}+D_{\text{statoA}}+D_{\text{dataFine}})\cdot N_{\text{miss}}=\\
+    &D{\text{\textsubscript{missioni}}} =\\
+    &=(D{\text{\textsubscript{codice}}}+D{\text{\textsubscript{dataFine}}}+D{\text{\textsubscript{obbietivo}}}+D{\text{\textsubscript{dataInizio}}}+D{\text{\textsubscript{statoA}}}+D{\text{\textsubscript{dataFine}}})\cdot N{\text{\textsubscript{miss}}}=\\
     &=(4+7+100+7+30+30)\cdot 5 = 890\textbf{B}
   \end{aligned}
 \end{equation}
@@ -101,13 +101,8 @@ In questo caso ci baseremo per sul popolamento fatto nella sezione 4.4 per fare 
 \end{tabular}
 \begin{equation}
   \begin{aligned}
-<<<<<<< HEAD
-    D_{\text{risorsa_1}}&=(D_{\text{sensore}} + D_{\text{missione}}) \cdot N_{\text{risorse_1}}=\\
+    D{\text{\textsubscript{risorsa1}}}&=(D{\text{\textsubscript{sensore}}} + D{\text{\textsubscript{missione}}}) \cdot N{\text{\textsubscript{risorse1}}}=\\
     &=(4+4)\cdot 5 = 40\text{\textbf{B}}\\
-=======
-    D_{\text{risorsa\textsubscript{1}}}&=(D_{\text{sensore}} + D_{\text{missione}}) \cdot N_{\text{risorse\textsubscript{1}}}=\\
-    &=(4+4)\cdot x\cdot 10^6=x\cdot 49.6  \text{\textbf{MB}}\\
->>>>>>> 81b2a95e7ccb38f3d731b3ef867daf574a26ff44
   \end{aligned}
 \end{equation}
 \subsection{Report}
@@ -123,7 +118,7 @@ In questo caso ci baseremo per sul popolamento fatto nella sezione 4.4 per fare 
 \end{tabular}
 \begin{equation}
   \begin{aligned}
-    D_{\text{report}} &=(D_{\text{stato}}+D_{\text{autore}})\cdot N_{\text{report}}=\\
+    D{\text{\textsubscript{report}}} &=(D{\text{\textsubscript{stato}}}+D{\text{\textsubscript{autore}}})\cdot N{\text{\textsubscript{report}}}=\\
     &=(30+4)\cdot 5 = 170\textbf{B}
   \end{aligned}
 \end{equation}
@@ -142,8 +137,8 @@ In questo caso ci baseremo per sul popolamento fatto nella sezione 4.4 per fare 
 \end{tabular}
 \begin{equation}
   \begin{aligned}
-    D_{\text{rivelazione}} &=\\
-    &=(D_{\text{data}}+D_{\text{ora}}+D_{\text{valore}}+D_{\text{sensore}})\cdot N_{\text{rivelazione}}=\\
+    D{\text{\textsubscript{rivelazione}}} &=\\
+    &=(D{\text{\textsubscript{data}}}+D{\text{\textsubscript{ora}}}+D{\text{\textsubscript{valore}}}+D{\text{\textsubscript{sensore}}})\cdot N{\text{\textsubscript{rivelazione}}}=\\
     &=(7+8+4+4)\cdot 5 = 115\textbf{B}
   \end{aligned}
 \end{equation}
@@ -160,7 +155,7 @@ In questo caso ci baseremo per sul popolamento fatto nella sezione 4.4 per fare 
 \end{tabular}
 \begin{equation}
   \begin{aligned}
-    D_{\text{robot}} &=(D_{\text{codice}}+D_{\text{tipologia}})\cdot N_{\text{robot}}=\\
+    D{\text{\textsubscript{robot}}} &=(D{\text{\textsubscript{codice}}}+D{\text{\textsubscript{tipologia}}})\cdot N{\text{\textsubscript{robot}}}=\\
     &=(4+30)\cdot 5 = 170\textbf{B}
   \end{aligned}
 \end{equation}
@@ -183,8 +178,8 @@ In questo caso ci baseremo per sul popolamento fatto nella sezione 4.4 per fare 
 \end{tabular}
 \begin{equation}
   \begin{aligned}
-    D_{\text{sensore}} &=\\
-    &=(D_{\text{id}}+D_{\text{stato}}+D_{\text{dataInst}}+D_{\text{ultCont}}+D_{\text{lat}}+D_{\text{alt}}+D_{\text{long}})\cdot N_{\text{sen}}=\\
+    D_{\text{\textsubscript{sensore}}} &=\\
+    &=(D{\text{\textsubscript{id}}}+D{\text{\textsubscript{stato}}}+D{\text{\textsubscript{dataInst}}}+D{\text{\textsubscript{ultCont}}}+D{\text{\textsubscript{lat}}}+D{\text{\textsubscript{alt}}}+D{\text{\textsubscript{long}}})\cdot N{\text{\textsubscript{sen}}}=\\
     &=(4+30+7+30+7+9+9+9)\cdot 5 = 525\textbf{B}
   \end{aligned}
 \end{equation}
@@ -201,13 +196,8 @@ In questo caso ci baseremo per sul popolamento fatto nella sezione 4.4 per fare 
 \end{tabular}
 \begin{equation}
   \begin{aligned}
-<<<<<<< HEAD
-    D_{\text{risorsa_2}}&=(D_{\text{robot}} + D_{\text{missione}}) \cdot N_{\text{risorse_2}}=\\
+    D{\text{\textsubscript{risorsa2}}}&=(D{\text{\textsubscript{robot}}} + D{\text{\textsubscript{missione}}}) \cdot N{\text{\textsubscript{risorse2}}}=\\
     &=(4+4)\cdot 6 = 48\text{\textbf{B}}\\
-=======
-    D_{\text{risorsa\textsubscript{2}}}&=(D_{\text{robot}} + D_{\text{missione}}) \cdot N_{\text{risorsa\textsubscript{2}}}=\\
-    &=(4+4)\cdot x\cdot 10^6=x\cdot 49.6  \text{\textbf{MB}}\\
->>>>>>> 81b2a95e7ccb38f3d731b3ef867daf574a26ff44
   \end{aligned}
 \end{equation}
 \subsection{Gestione dello spazio e dell'affidabilità}

@@ -102,7 +102,7 @@ CREATE TABLE RILEVAZIONI(
 
 \subsection{Robot}
 \begin{minted}[breaklines]{sql}
-CREATE SEQUENCE robot_codice_seq START WITH 1;
+CREATE SEQUENCE robo_codice_seq START WITH 1;
 CREATE TABLE ROBOT(
     CODICE INTEGER DEFAULT robot_codice_seq.nextval NOT NULL,
     TIPOLOGIA VARCHAR(30),
@@ -137,7 +137,6 @@ CREATE TABLE RISORSA_2(
 
       CONSTRAINT FK_RISORSA2_MISSIONE FOREIGN KEY(MISSIONE)
      ->REFERENCES MISSIONI(CODICE) ON DELETE CASCADE,
-      \end{aligned}     
     );
 \end{minted}
 \end{description}
