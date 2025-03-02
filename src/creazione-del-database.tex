@@ -1,5 +1,5 @@
 \section{Creazione del database}
-%TODO: Da completare
+%DONE: Da completare
 Delineato il modello logico, tramite i comandi DDL possiamo inserire all'interno del data base gli schemi di relazioni associate alle tabelle.
 \begin{description}
 
@@ -35,7 +35,7 @@ CREATE TABLE ANOMALIE(
 \end{minted}
 
 \subsection{Interventi}
-\begin{minted}{sql}
+\begin{minted}[breaklines]{sql}
 CREATE SEQUENCE interventi_codice_seq START WITH 1;
 CREATE TABLE INTERVENTI(
     CODICE INTEGER DEFAULT interventi_codice_seq.nextval NOT NULL,
@@ -49,7 +49,7 @@ CREATE TABLE INTERVENTI(
 \end{minted}
 
 \subsection{Membri}
-\begin{minted}{sql}
+\begin{minted}[breaklines]{sql}
 CREATE SEQUENCE membri_codice_seq START WITH 1;
 CREATE TABLE MEMBRI(
     CODICE INTEGER DEFAULT membri_codice_seq.nextval NOT NULL,
@@ -61,7 +61,7 @@ CREATE TABLE MEMBRI(
 \end{minted}
 
 \subsection{Report}
-\begin{minted}{sql}
+\begin{minted}[breaklines]{sql}
 CREATE TABLE REPORT(
     STATO VARCHAR(30) NOT NULL,
     AUTORE INTEGER NOT NULL,
@@ -72,7 +72,7 @@ CREATE TABLE REPORT(
 \end{minted}
 
 \subsection{Missioni}
-\begin{minted}{sql}
+\begin{minted}[breaklines]{sql}
 CREATE SEQUENCE missioni_codice_seq START WITH 1;
 CREATE TABLE MISSIONI(
     CODICE INTEGER DEFAULT missioni_codice_seq.nextval NOT NULL,
@@ -88,7 +88,7 @@ CREATE TABLE MISSIONI(
 \end{minted}
 
 \subsection{Rilevazioni}
-\begin{minted}{sql}
+\begin{minted}[breaklines]{sql}
 CREATE TABLE RILEVAZIONI(
     DATA DATE NOT NULL,
     ORA VARCHAR(8) NOT NULL, 
@@ -101,7 +101,7 @@ CREATE TABLE RILEVAZIONI(
 \end{minted}
 
 \subsection{Robot}
-\begin{minted}{sql}
+\begin{minted}[breaklines]{sql}
 CREATE SEQUENCE robot_codice_seq START WITH 1;
 CREATE TABLE ROBOT(
     CODICE INTEGER DEFAULT robot_codice_seq.nextval NOT NULL,
@@ -110,8 +110,8 @@ CREATE TABLE ROBOT(
 );
 \end{minted}
 
-\subsection{Risorsa_1}
-\begin{minted}{sql}
+\subsection{Risorsa\textsubscript{1}}
+\begin{minted}[breaklines]{sql}
 CREATE TABLE RISORSA_1(
     ROBOT INTEGER NOT NULL,
     MISSIONE INTEGER NOT NULL,
@@ -125,8 +125,8 @@ CREATE TABLE RISORSA_1(
     );
 \end{minted}
 
-\subsection{Risorsa_2}
-\begin{minted}{sql}
+\subsection{Risorsa\textsubscript{2}}
+\begin{minted}[breaklines]{sql}
 CREATE TABLE RISORSA_2(
     SENSORE INTEGER NOT NULL,
     MISSIONE INTEGER NOT NULL,
