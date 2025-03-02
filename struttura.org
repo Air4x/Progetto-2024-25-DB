@@ -10,10 +10,13 @@
 - [X] Progettazione Logica
   - [X] trasformazione schema E/R
   - [X] trasformazione in schema relazionale
-- [ ] Progettazione Fisica
-  - [95%] Dimensionamento dei dati
+- [X] Progettazione Fisica
+  - [X] Dimensionamento dei dati
   - [X] Creazione del database
   - [X] Gestione degli indici
-  - [ ] Popolamento della base di dati
-- [ ] Operazioni
+  - [X] Popolamento della base di dati
+- [X] Operazioni
+  - [X] Viste
+  - [X] Query
+  - [X] Trigger
 - [ ] Discussione implementazione web-app
