@@ -1,6 +1,6 @@
 \section{Popolamento della base di dati}
 %TODO: In caso di cambiamentoi nel popolamento ricardare di aggiornare il dimensionamento
-In tale sezioni ci occuperemo del popolamento della base dati con l'ausilio di Chatgip per la creazione di dati fittizi con il fini di testare la nostra base dati. In otteniamo:
+In tale sezioni ci occuperemo del popolamento della base dati con l'ausilio di Chatgpt per la creazione di dati fittizie con il fini di testare la nostra base dati. E otteniamo:
 \begin{itemize}
 \item 5 Sensori
 \item 6 Anomalie
@@ -14,7 +14,7 @@ In tale sezioni ci occuperemo del popolamento della base dati con l'ausilio di C
 \item 6 Risorsa\_2
 \end{itemize}
 \subsection{\texttt{Sensori}}
-\begin{minted}[breaklines]{sql}
+\begin{minted}{sql}
 INSERT INTO SENSORI (STATO, DATAINSTALLAZIONE, TIPO, ULTIMOCONTROLLO, LATITUDINE, LONGITUDINE, ALTITUDINE) VALUES
 ('Attivo', TO_DATE('2023-01-15', 'YYYY-MM-DD'), 'Temperatura', TO_DATE('2024-02-01', 'YYYY-MM-DD'), 45.1234, 12.5678, 100.5),
 ('Guasto', TO_DATE('2022-06-20', 'YYYY-MM-DD'), 'Pressione', TO_DATE('2024-01-10', 'YYYY-MM-DD'), 44.8765, 13.6789, 200.3),
@@ -33,7 +33,7 @@ INSERT INTO ANOMALIE (DATA, ORA, CAUSA, LIVELLO, SENSORE) VALUES
 (TO_DATE('2024-01-09', 'YYYY-MM-DD'),'10:00:00', 'Danno Hardware', 2, 3);
 \end{minted}
 \subsection{\texttt{Interventi}}
-\begin{minted}[breaklines]{sql}
+\begin{minted}{sql}
 INSERT INTO INTERVENTI (ESITO, CALIBRAZIONE, RIPARAZIONE, SOSTITUZIONE, DATAPREFISSATA) VALUES 
 ('Completato', 'Sì', 'No', 'No', TO_DATE('2024-02-20', 'YYYY-MM-DD')),
 ('In corso', 'No', 'Sì', 'No', TO_DATE('2024-03-05', 'YYYY-MM-DD')),
@@ -60,7 +60,7 @@ INSERT INTO REPORT (STATO, AUTORE) VALUES
 ('In attesa', 5);
 \end{minted}
 \subsection{\texttt{Missioni}}
-\begin{minted}[breaklines]{sql}
+\begin{minted}{sql}
 INSERT INTO MISSIONI (DATAFINE, OBBIETTIVO, DATAINIZIO, STATOATTUALE, RESOCONTO) VALUES 
 (TO_DATE('2024-03-10', 'YYYY-MM-DD'), 'Manutenzione sensori', TO_DATE('2024-02-25', 'YYYY-MM-DD'), 'Attiva', 'Confermato'),
 (TO_DATE('2024-04-01', 'YYYY-MM-DD'), 'Installazione nuovi dispositivi', TO_DATE('2024-03-15', 'YYYY-MM-DD'), 'Pianificata', 'In revisione'),
