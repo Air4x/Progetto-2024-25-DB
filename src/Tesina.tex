@@ -7,21 +7,28 @@
 \usepackage{amssymb}
 \usepackage{authblk}
 \usepackage{minted}
+\usepackage{titlepic}
 \usepackage{booktabs}
-\title{$\vcenter{\hbox{\includegraphics[width=6cm]{images/F2.png}}}$ \\ Progetto Basi di Dati}
-\author{Buglione Giuseppe}
-\author{Calcagno Mario}
-\author{Calculli Francesco}
-\affil{Dipartimento delle Tecnologie dell'Informazione, Università Federico II}
-\date{a.a. 2024/2025}
+% \title{$\vcenter{\hbox{\includegraphics[width=\linewidth]{images/ADM.jpeg}}}$ \\ Progetto Basi di Dati}
+% \author{Buglione Giuseppe}
+% \author{Calcagno Mario}
+% \author{Calculli Francesco}
+% \titlepic{\includegraphics[width=\linewidth]{images/F2.png}} % F2.png
+% \affil{Dipartimento delle Tecnologie dell'Informazione, Università Federico II}
+% \date{a.a. 2024/2025}
 \begin{document}
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=\linewidth]{images/ADM.jpeg}
-\end{figure}
-
-\maketitle
+% \maketitle
+\begin{titlepage}
+  \centering
+  \includegraphics[width=0.75\linewidth]{images/ADM.jpeg}\par
+  {\Large \textsc{\texttt{ASTRADM}}\par}
+  {\Large\itshape Buglione Giuseppe\par}
+  {\Large\itshape Calcagno Mario\par}
+  {\Large\itshape Calculli Francesco\par}
+  {\Large\itshape Dipartimento delle Tecnologie dell'Informazione, Università Federico II\par}
+  \vfill
+  \includegraphics[width=0.15\linewidth]{images/F2.png}
+\end{titlepage}
 
 \tableofcontents
 \input{src/introduzione}
